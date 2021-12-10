@@ -9,9 +9,14 @@ function Navbar() {
 
   return (
     <nav className="Navbar">
+    {/* Logo  redirecting to the home page*/}
       <Link to="/">
-        <button>Home</button>
+        <h1>HybridBox</h1>
       </Link>
+
+      
+
+      <Link to="/channels">Channels</Link>
 
       {isLoggedIn && (
         <>

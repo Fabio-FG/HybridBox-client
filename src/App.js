@@ -11,6 +11,8 @@ import ErrorPage from "./pages/ErrorPage/ErrorPage";
 
 import IsPrivate from './components/IsPrivate/IsPrivate';
 import IsAnon from "./components/IsAnon/IsAnon";
+import ChannelListPage from "./pages/ChannelListPage/ChannelListPage";
+import ChannelDetailPage from "./pages/ChannelDetailsPage/ChannelDetailsPage";
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
         <Route path="/signup" element={<IsAnon> <SignupPage /> </IsAnon>} />
         <Route path="/login" element={<IsAnon> <LoginPage /> </IsAnon>} />
 
+        <Route path="/channels" element={<ChannelListPage />} />
+        <Route path="/channels/:channelId" element={<ChannelDetailPage /> } />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>
