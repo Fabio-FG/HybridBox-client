@@ -6,7 +6,7 @@ const AuthContext = createContext();
 
 function AuthProviderWrapper({ children }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState("");  //THIS WAS NULL but it was giving error
 
   const [isLoading, setIsLoading] = useState(true);
 

@@ -31,6 +31,7 @@ function App() {
         <Route path="/channels" element={<ChannelListPage />} />
         <Route path="/channels/:channelId" element={<ChannelDetailPage /> } />
         <Route path="/streams/:streamId" element={<StreamDetailPage />} />
+        
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>
