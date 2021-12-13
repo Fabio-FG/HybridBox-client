@@ -1,4 +1,4 @@
-import './CustomList.css'
+import "./CustomList.css";
 import { useState, useEffect, useContext } from "react";
 /* import { AuthContext } from "../../context/auth.context"; */
 import authService from "../../services/auth.service";
@@ -14,18 +14,25 @@ function CustomList({ addChannel }) {
 
   useEffect(() => {
     getUser();
-    setCartChannels(cartChannels)
+    setCartChannels([]);
   }, []);
 
   return (
     <div className="customList">
       <h3>MyHybrid Box Custom list </h3>
       {/* conditional */}
-      {/*  {cartChannels.length === 0 && <div>Cart is empty</div>} */}
+      {cartChannels.length === 0 && <div>Cart is empty</div>}
 
       <div className="item">
         {cartChannels.map((channel) => {
-         return <div className="cart-container-box"><aside>{channel.channelName}</aside></div>;
+          return (
+            <div className="list-container">
+              <div className="cart-container-box" key={channel._id}>
+                {channel.channelName}
+              </div>
+              
+            </div>
+          );
         })}
       </div>
     </div>

@@ -64,6 +64,8 @@ function ChannelListPage() {
       const addedItem = await channelsService.addChannel(id);
       console.log(addedItem.data);
       console.log("item added!");
+      setCartChannels(addedItem.data)
+      
     } catch (error) {
       console.log(error);
     }
@@ -80,18 +82,18 @@ function ChannelListPage() {
       <h1>Channel list</h1>
       <Searchbar />
       <CustomList cartChannels={cartChannels} addChannel={addChannel} />
-      <h2 class="channel-list-title">Channel list</h2>
+      <h2 className="channel-list-title">Channel list</h2>
       <div className="channel-container">
         {channels.map((oneChannel) => {
           return (
             <div className="channelCard" key={oneChannel._id}>
               <div className="info-container">
+                <Link to={"/channels/" + oneChannel._id}>
                 <img
                   src={oneChannel.channelImage}
                   alt={oneChannel.channelName}
                   className="channel-img"
                 />
-                <Link to={"/channels/" + oneChannel._id}>
                   <h4>{oneChannel.channelName}</h4>
                 </Link>
                 

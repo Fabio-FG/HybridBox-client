@@ -73,7 +73,7 @@
     color: white;
     margin-bottom: 10px;
     border-radius: 5px;
-    border: none;
+  border: hidden;
     font-size: 0.8em;
     width: 50%;
     margin: auto;
