@@ -5,7 +5,7 @@
   text-align: center;
 }
 
-.intro-container h1, h2, h3, h4{
+.intro-container-text {
     position: absolute;
     color: whitesmoke;
     margin-top: 8%;

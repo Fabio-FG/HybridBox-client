@@ -12,16 +12,13 @@
 }
 
 
-
-
-
 .nav-container{
     display: flex;
     margin-left: auto;
     align-items: center;
     justify-content: space-around;
     width: 30%;
-    margin-right: 12%;
+    margin-right: 8%;
     background-color: rgba(165, 7, 38, 0.37);
     height: 50px;
     border-radius: 10px;

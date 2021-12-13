@@ -80,7 +80,7 @@ function ChannelListPage() {
       <h1>Channel list</h1>
       <Searchbar />
       <CustomList cartChannels={cartChannels} addChannel={addChannel} />
-      <h3>Channel list</h3>
+      <h2 class="channel-list-title">Channel list</h2>
       <div className="channel-container">
         {channels.map((oneChannel) => {
           return (
@@ -94,13 +94,14 @@ function ChannelListPage() {
                 <Link to={"/channels/" + oneChannel._id}>
                   <h4>{oneChannel.channelName}</h4>
                 </Link>
-                <p>{oneChannel.genre}</p>
+                
               </div>
               <button
                 onClick={() => addChannel(oneChannel._id)}
                 key={oneChannel._id}
+                className="add-btn"
               >
-                Add to my HybridBox
+                Add to HybridBox
               </button>
             </div>
           );

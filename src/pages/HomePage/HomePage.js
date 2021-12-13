@@ -8,7 +8,7 @@ function HomePage() {
 
       <img src="https://hd-report.com/wp-content/uploads/2015/10/sling-tv-channels-grid-color-1280px.jpg" alt="channel-grid" className="tv-grid"/>
       {/* <h1>Home Page</h1> */}
-      <h4>Welcome to the Hybrid Box.</h4>
+      <h4 className='intro-container-text'>Welcome to the Hybrid Box.</h4>
       <h3 className="intro-text">Customise your TV channels deals with HybridBox. Now you can truly see what you pay for.</h3>
       </div>
     </div>
