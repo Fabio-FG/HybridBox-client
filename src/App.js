@@ -14,6 +14,7 @@ import IsAnon from "./components/IsAnon/IsAnon";
 import ChannelListPage from "./pages/ChannelListPage/ChannelListPage";
 import ChannelDetailPage from "./pages/ChannelDetailsPage/ChannelDetailsPage";
 import StreamDetailPage from "./pages/StreamDetailPage/StreamDetailPage";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -34,6 +35,8 @@ function App() {
         
         <Route path="*" element={<ErrorPage />} />
       </Routes>
+
+      <Footer />
     </div>
   );
 }

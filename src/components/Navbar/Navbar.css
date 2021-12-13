@@ -1,0 +1,46 @@
+.Navbar{
+    
+    display: flex;
+    margin-bottom: 120px;
+    background-color: rgb(59, 49, 59);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    flex-direction: row;
+    
+   
+
+}
+
+
+.logo{
+    color: white;
+    font-size: 1em;
+    margin-top: 5px;
+    
+}
+
+
+.nav-container{
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    margin-right: 100px;
+}
+
+a {
+    color: white;
+    font-size: 2em;
+    margin: 5px;
+    padding: 0;
+    align-items: flex-end;
+    text-decoration: none;
+    
+   
+}
+
+.btn{
+    background-color: black;
+    color: white;
+}
+

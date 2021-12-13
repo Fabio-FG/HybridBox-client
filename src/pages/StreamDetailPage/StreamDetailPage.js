@@ -1,3 +1,4 @@
+import "./StreamDetailPage.css"
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
@@ -29,7 +30,7 @@ function StreamDetailPage() {
   }, []);
 
   return (
-    <div className="Stream">
+    <div className="stream">
       <h1>Stream details</h1>
       <p>{stream.streamName}</p>
       <img src={stream.streamImage} alt="streamLogo" />

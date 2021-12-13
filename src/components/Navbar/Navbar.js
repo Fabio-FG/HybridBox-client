@@ -1,3 +1,4 @@
+import "./Navbar.css"
 import { Link } from "react-router-dom";
 
 import { useContext } from "react";
@@ -11,27 +12,28 @@ function Navbar() {
     <nav className="Navbar">
     {/* Logo  redirecting to the home page*/}
       <Link to="/">
-        <h1>HybridBox</h1>
+        <h1 className="logo">HybridBox</h1>
       </Link>
 
       
+<div className="nav-container">
 
       <Link to="/channels">Channels</Link>
 
       {isLoggedIn && (
         <>
-          <button onClick={logOutUser}>Logout</button>
+          <button onClick={logOutUser} className="btn">Logout</button>
         </>
       )}
 
       {!isLoggedIn && (
         <>
-          <Link to="/signup">
-            <button>Sign Up</button>
+          <Link to="/signup" >
+            <button className="btn">Sign Up</button>
           </Link>
 
           <Link to="/login">
-            <button>Login</button>
+            <button className="btn">Login</button>
           </Link>
         </>
       )}
@@ -44,6 +46,7 @@ function Navbar() {
           </Link>
         )}
       </div>
+</div>
     </nav>
   );
 }

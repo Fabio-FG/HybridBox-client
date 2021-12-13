@@ -2,23 +2,21 @@
 
 body {
   margin: 0;
+  background-color: lightsteelblue;
 }
 
-a {
-  list-style: none;
-  color: black;
-}
 
-button,
+
+ button,
 select {
   padding: 5px 10px;
   min-width: 50px;
   margin: 5px;
   font-size: 18px;
   height: 40px;
-}
+} 
 
-label {
+ label {
   width: 200px;
   display: block;
 }
@@ -29,16 +27,21 @@ textarea {
   padding: 10px;
   display: inline-block;
   margin: 10px;
-}
+} 
 
-nav {
-  background: #515f7d;
+/* nav {
+  background: #454b58;
   color: white;
   padding: 0px 20px;
   box-shadow: 0px 1px 2px gray;
-  width: 100%;
+ 
   margin-bottom: 15px;
-  padding: 5px;
+  
+}
+
+nav h1{
+  
+  margin: 0;
 }
 
 nav li {
@@ -46,9 +49,10 @@ nav li {
   color: white;
   font-size: 24px;
   font-weight: 600;
-}
+  
+} */
 
-.card {
+/* .card {
   width: 400px;
   padding: 10px;
   box-shadow: 0px 2px 3px grey;
@@ -56,9 +60,10 @@ nav li {
   margin-bottom: 20px;
   background: #94a7c8;
   border-radius: 4px;
+  
 }
-
-.ProjectCard h3::after {
+ */
+ .ProjectCard h3::after {
   content: url("https://education-team-2020.s3.eu-west-1.amazonaws.com/web-dev/m3/icon-expand.png");
   margin-left: 5px;
 }
@@ -77,6 +82,7 @@ nav li {
   margin-bottom: 20px;
   padding: 10px;
   border-radius: 4px;
+  margin-top: 10%;
 }
 
 .EditProjectPage {
@@ -100,6 +106,7 @@ nav li {
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 .AddTask button,
@@ -110,20 +117,16 @@ nav li {
 .TaskCard {
   background-color: #dfeef9;
 }
-.Navbar {
-  padding: 5px 20px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
+
 
 .profile-img-wrapper {
-  width: 50px;
+  width: 40px;
+  background-color: black;
 }
 
 .profile-img {
-  width: 35px;
+  width: 15px;
   border-radius: 35px;
   border: 2px solid black;
   background-color: rgba(255, 255, 255, 0.3);
-}
+} 
