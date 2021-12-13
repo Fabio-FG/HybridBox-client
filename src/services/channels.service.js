@@ -1,9 +1,9 @@
-import axios from 'axios';
+import axios from "axios";
 
 class ChannelsService {
   constructor() {
     this.api = axios.create({
-      baseURL: process.env.REACT_APP_SERVER_URL || "http://localhost:5005"
+      baseURL: process.env.REACT_APP_SERVER_URL || "http://localhost:5005",
     });
 
     // Automatically set token in the headers for every request
@@ -21,30 +21,33 @@ class ChannelsService {
 
   // POST /channels
   createChannel = async (requestBody) => {
-    return this.api.post('/channels', requestBody);
-  }
+    return this.api.post("/channels", requestBody);
+  };
+
+  //Post /âdd channels
+  addChannel = async (id) => {
+    return this.api.post(`api/users/channels/${id}`);
+  };
 
   // GET /channels
   getAllChannels = async () => {
-    return this.api.get('/channels');
-  }
+    return this.api.get("/channels");
+  };
 
   // GET /channels/:projectId
   getChannel = async (channelId) => {
     return this.api.get(`/channels/${channelId}`);
-  }
+  };
 
   // PUT /channels/:channelId
   updateChannel = async (channelId, requestBody) => {
     return this.api.put(`/channels/${channelId}`, requestBody);
-  }
+  };
 
   // DELETE /channels/delete/:projectId
   deleteChannel = async (channelId) => {
     return this.api.delete(`/channels/delete/${channelId}`);
-  } 
-
-
+  };
 }
 
 // Create one instance of the service

@@ -1,5 +1,6 @@
 import "./ChannelListPage.css";
 import channelsService from "../../services/channels.service";
+import authService from "../../services/auth.service";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -7,12 +8,12 @@ import Searchbar from "../../components/Searchbar/Searchbar";
 import CustomList from "../../components/CustomList/CustomList";
 
 function ChannelListPage() {
+  // contains all the channels and streams in the DB
   const [channels, setChannels] = useState([]);
   const [streams, setStreams] = useState([]);
+
   //state for the list
   const [cartChannels, setCartChannels] = useState([]);
-
-  console.log("my channels", channels);
 
   //function to get all channels
   const getAllChannels = async () => {
@@ -44,19 +45,35 @@ function ChannelListPage() {
     getAllStreams();
   }, []);
 
+  const auxChannels = [];
   //function to add the channel to my list
-  const addChannel = (channel) => {
+  const addChannel = async (id) => {
     //variable to store the value with a find function to see if the id of the channel exists or not
-    const exist = cartChannels.find(channelItem => channelItem._id === channel._id);
+    /*  const exist = cartChannels.find(channelItem => channelItem._id === channel._id); */
     //conditional - what will happen if we find the id
-    if(exist){
-      console.log( setCartChannels([...cartChannels, {...channels}]))
-      setCartChannels([...cartChannels, {...channels}])
+    /* if(exist){
+      console.log( setCartChannels("added"));
       
-    }
-  }
+      
+    } */
 
-  
+    try {
+      const addItem = await channelsService.addChannel(id);
+   
+      /*  const response = await axios.post( `http://localhost:5005/api/users/channels/${id}`);
+      console.log(response.data); */
+    
+      setCartChannels(id, [...channels]);
+      
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    addChannel();
+  }, []);
+
   //DISPLAYING ON THE SCREEN
 
   return (
@@ -69,11 +86,21 @@ function ChannelListPage() {
         {channels.map((oneChannel) => {
           return (
             <div className="channelCard" key={oneChannel._id}>
-              <Link to={"/channels/" + oneChannel._id}>
-                <h4>{oneChannel.channelName}</h4>
-              </Link>
-              <p>{oneChannel.genre}</p>
-              <button onClick={addChannel} key={oneChannel._id}>
+              <div className="info-container">
+                <img
+                  src={oneChannel.channelImage}
+                  alt={oneChannel.channelName}
+                  className="channel-img"
+                />
+                <Link to={"/channels/" + oneChannel._id}>
+                  <h4>{oneChannel.channelName}</h4>
+                </Link>
+                <p>{oneChannel.genre}</p>
+              </div>
+              <button
+                onClick={() => addChannel(oneChannel._id)}
+                key={oneChannel._id}
+              >
                 Add to my HybridBox
               </button>
             </div>

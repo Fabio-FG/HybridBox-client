@@ -42,7 +42,7 @@ function Navbar() {
         {user && (
           <Link to="/profile">
             <img className="profile-img" src={user.profileImage} alt="profile" />
-            {user.name}
+            
           </Link>
         )}
       </div>

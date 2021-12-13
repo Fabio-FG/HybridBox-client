@@ -32,3 +32,14 @@
     width: 20%;
     margin: 2%;
 }
+
+.channel-img{
+    max-width: 100px;
+    height: 70px;
+    margin: 0;
+}
+
+.info-container{
+    background-color: red;
+    border: 2px solid blue;
+}
