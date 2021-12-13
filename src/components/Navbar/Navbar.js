@@ -1,4 +1,4 @@
-import "./Navbar.css"
+import "./Navbar.css";
 import { Link } from "react-router-dom";
 
 import { useContext } from "react";
@@ -10,43 +10,50 @@ function Navbar() {
 
   return (
     <nav className="Navbar">
-    {/* Logo  redirecting to the home page*/}
-      <Link to="/">
-        <h1 className="logo">HybridBox</h1>
-      </Link>
+      {/* Logo  redirecting to the home page*/}
+      <div className="logo">
+        <Link to="/">
+          <h1>HybridBox</h1>
+        </Link>
+      </div>
 
-      
-<div className="nav-container">
+      <div className="nav-container">
+        <Link to="/channels">Channels</Link>
 
-      <Link to="/channels">Channels</Link>
 
-      {isLoggedIn && (
-        <>
-          <button onClick={logOutUser} className="btn">Logout</button>
-        </>
-      )}
+        {!isLoggedIn && (
+          <>
+            <Link to="/signup">
+              <button className="btn">Sign Up</button>
+            </Link>
 
-      {!isLoggedIn && (
-        <>
-          <Link to="/signup" >
-            <button className="btn">Sign Up</button>
-          </Link>
+            <Link to="/login">
+              <button className="btn">Login</button>
+            </Link>
+          </>
+        )}
 
-          <Link to="/login">
-            <button className="btn">Login</button>
-          </Link>
-        </>
-      )}
+        <div className="profile-img-wrapper">
+          {user && (
+            <Link to="/profile">
+              <img
+                className="profile-img"
+                src={user.profileImage}
+                alt="profile"
+              />
+            </Link>
+          )}
 
-      <div className="profile-img-wrapper">
-        {user && (
-          <Link to="/profile">
-            <img className="profile-img" src={user.profileImage} alt="profile" />
-            
-          </Link>
+          
+        </div>
+        {isLoggedIn && (
+          <>
+            <button onClick={logOutUser} className="btn">
+              Logout
+            </button>
+          </>
         )}
       </div>
-</div>
     </nav>
   );
 }

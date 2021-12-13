@@ -1,0 +1,17 @@
+.item{
+    background-color: rgba(255, 255, 255, 0.164);
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin: auto;
+}
+
+
+.cart-container-box{
+    background-color: crimson;
+    margin: 10px;
+    color: white;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 1.4em;
+}

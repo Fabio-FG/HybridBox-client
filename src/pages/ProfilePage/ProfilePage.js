@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-
+import CustomList from "../../components/CustomList/CustomList";
 import { useContext } from "react";
 import { AuthContext } from "../../context/auth.context";
 
@@ -20,14 +20,11 @@ function ProfilePage() {
       <h1>Profile Page</h1>
       <p>Name:{user.name}</p>
       <img src={user.profileImage} alt="profilePic"/>
-      <ul>
-        <li>List:{user.listOfChannels}</li>
-      </ul>
+      
      
 
-      <p>{user.role}</p>
-
-      <p>My HybridBox pack:{user.listOfChannels}</p>
+      <p><b>My role:</b>{user.role}</p>
+      <p>My HybridBox pack:<CustomList /></p>
     </div>
   );
 }

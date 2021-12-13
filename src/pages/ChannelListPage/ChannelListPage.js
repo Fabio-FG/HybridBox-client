@@ -18,7 +18,9 @@ function ChannelListPage() {
   //function to get all channels
   const getAllChannels = async () => {
     try {
-      const response = await axios.get("http://localhost:5005/channels");
+      //using services to get all channels from the backend
+      const response = await channelsService.getAllChannels();
+      /* const response = await axios.get("http://localhost:5005/channels"); */
       setChannels(response.data);
     } catch (error) {
       console.log(error);
@@ -46,6 +48,7 @@ function ChannelListPage() {
   }, []);
 
   const auxChannels = [];
+
   //function to add the channel to my list
   const addChannel = async (id) => {
     //variable to store the value with a find function to see if the id of the channel exists or not
@@ -53,26 +56,22 @@ function ChannelListPage() {
     //conditional - what will happen if we find the id
     /* if(exist){
       console.log( setCartChannels("added"));
-      
-      
+
     } */
 
     try {
-      const addItem = await channelsService.addChannel(id);
-   
-      /*  const response = await axios.post( `http://localhost:5005/api/users/channels/${id}`);
-      console.log(response.data); */
-    
-      setCartChannels(id, [...channels]);
-      
+      //Used service to get the value from the DB on the backend
+      const addedItem = await channelsService.addChannel(id);
+      console.log(addedItem.data);
+      console.log("item added!");
     } catch (error) {
       console.log(error);
     }
   };
 
-  useEffect(() => {
+  /*  useEffect(() => {
     addChannel();
-  }, []);
+  }, []); */
 
   //DISPLAYING ON THE SCREEN
 

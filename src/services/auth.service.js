@@ -33,6 +33,11 @@ class AuthService {
     // return axios.post("http://localhost:5005/auth/verify");
     return this.api.get("/auth/verify");
   };
+
+  getUser = async () => {
+    // return axios.post("http://localhost:5005/auth/verify");
+    return this.api.get("/api/users/current");
+  };
 }
 
 // Create one instance of the service
