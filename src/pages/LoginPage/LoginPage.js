@@ -1,9 +1,10 @@
 // src/pages/LoginPage.js
-
+import './LoginPage.css'
 import axios from "axios";
 import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
+
 
 import authService from "../../services/auth.service";
 
@@ -56,17 +57,17 @@ function LoginPage(props) {
   return (
     <div className="LoginPage">
       <h1>Login</h1>
-      <button>User</button>
-      <button>Admin</button>
+      
+     
 
       <form onSubmit={handleLoginSubmit}>
         <label>Email:</label>
-        <input type="text" name="email" value={email} onChange={handleEmail} />
+        <input type="text" name="email" value={email} onChange={handleEmail} placeholder="Email"/>
 
         <label>Password:</label>
-        <input type="password" name="password" value={password} onChange={handlePassword} />
+        <input type="password" name="password" value={password} onChange={handlePassword} placeholder="Password"/>
 
-        <button type="submit">Login</button>
+        <button type="submit" className="login-btn">Login</button>
       </form>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 

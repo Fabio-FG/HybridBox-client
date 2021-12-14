@@ -29,6 +29,14 @@ function Navbar() {
           </>
         )}
 
+        {isLoggedIn && (
+          <>
+            <button onClick={logOutUser} className="logout-btn">
+              Logout
+            </button>
+          </>
+        )}
+        
         <div className="profile-img-wrapper">
           {user && (
             <Link to="/profile" className="link-profile">
@@ -46,13 +54,6 @@ function Navbar() {
           )}
 
         </div>
-        {isLoggedIn && (
-          <>
-            <button onClick={logOutUser} className="btn">
-              Logout
-            </button>
-          </>
-        )}
       </div>
     </nav>
   );

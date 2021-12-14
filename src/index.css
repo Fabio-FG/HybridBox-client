@@ -11,6 +11,7 @@
     font-family: "Cedora-RegularStd";
     margin:0;
     padding: 0;
+    background-color: rgb(204, 204, 204);
     /* background: linear-gradient(356deg, #f56a6a, #f58585, #f79a9a, #746f6f);
     background-size: 800% 800%;
   
@@ -36,14 +37,9 @@
   } */
   
   }
- button,
-select {
-  padding: 5px 10px;
-  min-width: 50px;
-  margin: 5px;
-  font-size: 18px;
-  height: 40px;
-} 
+ 
+
+
 
  label {
   width: 200px;
@@ -120,7 +116,8 @@ nav li {
 
 .SignupPage,
 .LoginPage {
-  background-color: #608dd5;
+  background-color: crimson;
+  color: white;
 }
 
 .LoginPage {
@@ -147,4 +144,10 @@ nav li {
   background-color: #dfeef9;
 }
 
-
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: underline;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}

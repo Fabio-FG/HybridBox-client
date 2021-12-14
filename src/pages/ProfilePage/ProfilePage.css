@@ -1,5 +1,67 @@
+.profile-wrapper{
+    display: flex;
+    width: 100%;
+    
+}
+
+
 .profile-img{
     border-radius: 50%;
     height: 250px;
-    width: 18%;
+    width: 30%;
+}
+
+.profile-page-title{
+    color: crimson;
+    margin-top: 5%;
+}
+
+aside {
+    background-color: white;
+    width: 40%;
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+
+}
+
+.profile-container{
+   background-color: white;
+   width: 60%;
+   border: 2px solid black;
+   border-radius: 10px;
+   margin: 10px;
+}
+
+.prices-container{
+    line-height:10px;
+    text-align: left;
+    margin-left: 5%;
+}
+
+.checkout-btn{
+    transition-duration: 0.4s;
+}
+
+.checkout-btn:hover{
+    border: 1px solid crimson;
+    transition-duration: 0.4s;
+    transform: scale(1.1);
+    background-color: white;
+    color: crimson;
+}
+
+
+.edit-btn{
+    
+    transition-duration: 0.4s;
+    
+}
+
+.edit-btn:hover{
+    border: 1px solid crimson;
+    transition-duration: 0.4s;
+    transform: scale(1.1);
+    background-color: white;
+    color: crimson;
 }

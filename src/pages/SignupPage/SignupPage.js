@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import './SignupPage.css'
 
 import authService from "../../services/auth.service";
 
@@ -46,21 +47,24 @@ function SignupPage(props) {
       <h1>Sign Up</h1>
 
       <form onSubmit={handleSignupSubmit}>
-        <label>Email:</label>
-        <input type="text" name="email" value={email} onChange={handleEmail} />
+        <label>Name</label>
+        <input type="text" name="name" value={name} onChange={handleName} placeholder="Name" />
 
-        <label>Password:</label>
+
+        <label>Email</label>
+        <input type="text" name="email" value={email} onChange={handleEmail} placeholder="Email" />
+
+        <label>Password</label>
         <input
           type="password"
           name="password"
           value={password}
           onChange={handlePassword}
+          placeholder="Password"
         />
 
-        <label>Name:</label>
-        <input type="text" name="name" value={name} onChange={handleName} />
 
-        <button type="submit">Sign Up</button>
+        <button type="submit" className="signup-btn">Sign Up</button>
       </form>
 
       {errorMessage && <p className="error-message">{errorMessage}</p>}

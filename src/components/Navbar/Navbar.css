@@ -47,7 +47,7 @@
   margin-top: -15px;
 }
 
-.btn {
+.logout-btn {
   background-color: transparent;
   border: 2px solid rgb(192, 18, 53);
   border-radius: 5px;
@@ -56,7 +56,7 @@
   transition-duration: 0.4s;
 }
 
-.btn:hover{
+.logout-btn:hover{
   transform: scale(1.1);
   transition-duration: 0.4s;
 }
@@ -71,5 +71,19 @@
 }
 
 
+button,
+select {
+  padding: 5px 10px;
+  min-width: 50px;
+  margin: 5px;
+  font-size: 1.2em;
+  height: 40px;
+  background-color: rgb(173, 7, 40);
+  color: white;
+  transition-duration: 0.4s;
+  border: none;
+
+  
+}
 
 

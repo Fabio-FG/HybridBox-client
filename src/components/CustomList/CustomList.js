@@ -10,7 +10,7 @@ function CustomList({ addChannel }) {
     const response = await authService.getUser();
     setCartChannels(response.data.listOfChannels);
     console.log(response.data);
-    addChannel(cartChannels)
+    /* addChannel(cartChannels) */
   };
 
   useEffect(() => {

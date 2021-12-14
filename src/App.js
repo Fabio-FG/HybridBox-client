@@ -27,6 +27,7 @@ function App() {
         <Route path="/profile" element={<IsPrivate> <ProfilePage /> </IsPrivate>} />
         <Route path="/signup" element={<IsAnon> <SignupPage /> </IsAnon>} />
         <Route path="/login" element={<IsAnon> <LoginPage /> </IsAnon>} />
+        
         <Route path="/channels" element={<ChannelListPage />} />
         <Route path="/channels/:channelId" element={<ChannelDetailPage /> } />
         <Route path="/streams/:streamId" element={<StreamDetailPage />} />

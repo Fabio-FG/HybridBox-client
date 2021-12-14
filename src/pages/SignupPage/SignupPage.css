@@ -1,0 +1,20 @@
+.signup-btn {
+  padding: 5px 10px;
+  min-width: 50px;
+  margin: 5px;
+  font-size: 1.2em;
+  height: 40px;
+  background-color: rgb(173, 7, 40);
+  color: white;
+  transition-duration: 0.4s;
+  border: none;
+
+  
+} 
+
+.signup-btn:hover{
+    background-color: white;
+    color: crimson;
+    transition-duration: 0.4s;
+    transform: scale(1.1);
+}
