@@ -3,7 +3,7 @@
   font-family: "Cedora-RegularStd";
   src: local("Cedora-RegularStd"),
    url("./fonts/Cedora-RegularStd.otf") format("opentype");
-  font-weight: bold;
+  font-weight: 400;
   }
 
 
@@ -35,9 +35,6 @@
     100%{background-position:29% 0%}
   }
   
-
-
-
 
  button,
 select {

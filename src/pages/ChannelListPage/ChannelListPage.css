@@ -1,82 +1,84 @@
-.channel-list-title{
-    color: white;
-    font-size: 2em;
-    margin-top: 100px;
+.channel-list-title {
+  color: white;
+  font-size: 2em;
+  margin-top: 100px;
 }
-
 
 .channelCard {
-    width: 20%;
-    margin: 2%;
-    display: flex;
-    flex-direction: column;
+  width: 20%;
+  margin: 2%;
+  display: flex;
+  flex-direction: column;
 }
 
+.channel-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: auto;
+  margin-top: 3%;
+  background-color: rgba(255, 255, 255, 0.164);
+}
 
+.channel-img {
+  max-width: 100px;
+  height: 70px;
+  margin: 0;
+  margin-bottom: -10px;
+}
 
-.channel-container{
+.info-container {
+  transition-duration: 0.4s;
+  margin: 0;
+  margin-bottom: 0px;
+  padding: 0;
+}
+
+.info-container:hover {
+  transform: scale(1.2);
+  transition-duration: 0.4s;
+}
+
+.add-btn {
+  background-color: crimson;
+  color: white;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 0.8em;
+  width: 50%;
+  margin: auto;
+  margin-top: -5px;
+  padding: 5px;
+  transition-duration: 0.5s;
+}
+
+.add-btn:hover {
+  color: white;
+  background-color: rgb(218, 32, 69);
+  box-shadow: 0px 2px 10px rgba(226, 226, 226, 0.788);
+  transition-duration: 0.5s;
+}
+
+.link-service {
+  color: white;
+  text-decoration: none;
+}
+
+/* STREAM STYLES  */
+
+.stream-container {
     display: flex;
     flex-wrap: wrap;
     width: 80%;
     margin: auto;
     margin-top: 3%;
     background-color: rgba(255, 255, 255, 0.164);
-    
 }
-
-.stream-container{
-    display: flex;
-    flex-wrap: wrap;
-    width: 80%;
-    margin: auto;
-    margin-top: 3%;
-}
-
-
 
 .streamCard {
-    background-color: rgb(255, 0, 0);
     width: 20%;
     margin: 2%;
-}
-
-.channel-img{
-    max-width: 100px;
-    height: 70px;
-    margin: 0;
-    margin-bottom: -10px;
-    
-}
-
-.info-container{
-    transition-duration: 0.4s;
-    margin: 0;
-    margin-bottom: 0px;
-    padding: 0;
-}
-
-.info-container a{
-    color: white;
-    
-    
-}
-
-.info-container:hover{
-    transform: scale(1.2);
-    transition-duration: 0.4s;
-    
-    
-}
-
-.add-btn{
-    background-color: crimson;
-    color: white;
-    margin-bottom: 10px;
-    border-radius: 5px;
-  border: hidden;
-    font-size: 0.8em;
-    width: 50%;
-    margin: auto;
-    margin-top: -25px;
-    padding: 5px;
+    display: flex;
+    flex-direction: column;
 }

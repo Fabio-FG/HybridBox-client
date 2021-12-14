@@ -1,7 +1,18 @@
 .footer {
-  position: absolute;
-  margin-top: 100vh;
-  background-color: black;
+  height: 130px;
+  background-color:crimson;
   color: white;
   width: 100%;
+  bottom: 0;
+  display: flex;
+  margin-top: 5%;
+}
+
+.text-container{
+  margin-top: 40px;
+  margin: auto;
+  line-height: 5px;
+  font-size: 1.1em;
+  font-weight: lighter;
+  
 }

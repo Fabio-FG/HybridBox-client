@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import { useContext } from "react";
 import { AuthContext } from "../../context/auth.context";
+import Authentication from "../Authentication/Authentication";
 
 function Navbar() {
   // Get the value from the context
@@ -11,31 +12,26 @@ function Navbar() {
   return (
     <nav className="Navbar">
       {/* Logo  redirecting to the home page*/}
-      <div className="logo">
-        <Link to="/">
+      <div>
+        <Link to="/" className="logo">
           <h1>HybridBox</h1>
         </Link>
       </div>
 
       <div className="nav-container">
-        <Link to="/channels">Channels</Link>
+        <Link to="/channels" className="link-style">Channels</Link>
 
 
         {!isLoggedIn && (
           <>
-            <Link to="/signup">
-              <button className="btn">Sign Up</button>
-            </Link>
-
-            <Link to="/login">
-              <button className="btn">Login</button>
-            </Link>
+          
+           <Authentication />
           </>
         )}
 
         <div className="profile-img-wrapper">
           {user && (
-            <Link to="/profile">
+            <Link to="/profile" className="link-profile">
               <img
                 className="profile-img"
                 src={user.profileImage}

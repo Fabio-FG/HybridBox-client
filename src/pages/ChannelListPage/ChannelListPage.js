@@ -88,7 +88,7 @@ function ChannelListPage() {
           return (
             <div className="channelCard" key={oneChannel._id}>
               <div className="info-container">
-                <Link to={"/channels/" + oneChannel._id}>
+                <Link to={"/channels/" + oneChannel._id} className="link-service">
                 <img
                   src={oneChannel.channelImage}
                   alt={oneChannel.channelName}
@@ -109,15 +109,19 @@ function ChannelListPage() {
           );
         })}
       </div>
-      <h1>Streaming Services list</h1>´
+      {/* Streams render */}
+      <h1 className="channel-list-title">Streaming Services list</h1>
       <div className="stream-container">
         {streams.map((oneStream) => {
           return (
             <div className="streamCard" key={oneStream._id}>
-              <Link to={"/streams/" + oneStream._id}>
+            <div className="info-container">
+
+              <Link to={"/streams/" + oneStream._id} className="link-service">
                 <h4>{oneStream.streamName}</h4>
               </Link>
-              <button>Add to my HybridBox</button>
+            </div>
+              <button className="add-btn">Add to my HybridBox</button>
             </div>
           );
         })}
