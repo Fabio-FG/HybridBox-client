@@ -1,4 +1,4 @@
-import './ChannelDetailsPage.css'
+import "./ChannelDetailsPage.css";
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
@@ -34,10 +34,9 @@ function ChannelDetailPage() {
   //DISPLAYING THIS
   return (
     <div>
-      <h2>Channel Details</h2>
+      <h2>Details</h2>
       {channel && (
         <>
-          <p>{channel.channelName}</p>
           <img
             src={channel.channelImage}
             alt="channelLogo"
@@ -46,23 +45,36 @@ function ChannelDetailPage() {
               width: "250px",
             }}
           />
-          <p>{channel.genre}</p>
-          <p>
-            Official Page: <Link to="">{channel.channelWebsite}</Link>
-          </p>
+          <div className="channel-info-text">
+            <p>
+              <b>Channel Name:</b> {channel.channelName}
+            </p>
+            <p>
+              <b>Channel Genre:</b> {channel.genre}
+            </p>
+            <p>
+              <b>Official Page:</b> <Link to="">{channel.channelWebsite}</Link>
+            </p>
+          </div>
           <div className="description-text">
-            <p>{channel.description}</p>
+            <p>
+              <b>About:</b>
+              <br></br>
+              {channel.description}
+            </p>
           </div>
           <p>
             <b>Price:</b> {channel.channelPrice}€
           </p>
 
           <div className="btn-container">
-            <div className="add-btn">
-              <button>Add Hybrid Box</button>
-            </div>
-            <Link to="/" className="goback-btn">
-              Back
+            <button className="add-detail-btn">
+              Add<br></br>
+              Hybrid Box
+            </button>
+
+            <Link to="/channels">
+              <button className="goback-btn">Back</button>
             </Link>
           </div>
         </>

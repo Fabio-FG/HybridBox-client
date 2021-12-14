@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import './Authentication.css'
+import { useContext } from "react";
+import { AuthContext } from "../../context/auth.context";
 
 function Authentication() {
+  const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
   return (
     <div>
       {/* <Link to="/signup">
@@ -16,6 +19,7 @@ function Authentication() {
         <div className="dropdown-content">
           <Link to="/signup">Signup</Link>
           <Link to="/login">Login</Link>
+         
           
         </div>
       </div>

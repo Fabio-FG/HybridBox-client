@@ -135,19 +135,8 @@ nav li {
   
 }
 
-.AddTask button,
-.AddProject button {
-  display: block;
-}
 
 .TaskCard {
   background-color: #dfeef9;
 }
 
-a:-webkit-any-link {
-  color: -webkit-link;
-  cursor: pointer;
-  text-decoration: underline;
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-}

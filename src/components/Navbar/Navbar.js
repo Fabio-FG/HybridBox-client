@@ -8,7 +8,7 @@ import Authentication from "../Authentication/Authentication";
 function Navbar() {
   // Get the value from the context
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
-  console.log("theuser",user)
+  
   return (
     <nav className="Navbar">
       {/* Logo  redirecting to the home page*/}
@@ -24,7 +24,6 @@ function Navbar() {
 
         {!isLoggedIn && (
           <>
-          
            <Authentication />
           </>
         )}
