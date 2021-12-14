@@ -8,7 +8,7 @@ import Authentication from "../Authentication/Authentication";
 function Navbar() {
   // Get the value from the context
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
-
+  console.log("theuser",user)
   return (
     <nav className="Navbar">
       {/* Logo  redirecting to the home page*/}
@@ -34,13 +34,17 @@ function Navbar() {
             <Link to="/profile" className="link-profile">
               <img
                 className="profile-img"
-                src={user.profileImage}
+                src={user.image}
                 alt="profile"
+                style={{
+                  height: "40px",
+                  width: "40px",
+                  marginTop: "2px"
+                }}
               />
             </Link>
           )}
 
-          
         </div>
         {isLoggedIn && (
           <>

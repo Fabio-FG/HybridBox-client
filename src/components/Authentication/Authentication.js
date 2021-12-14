@@ -13,7 +13,7 @@ function Authentication() {
             </Link> */}
       <div className="dropdown">
         <button className="dropbtn">MyHybridBox</button>
-        <div class="dropdown-content">
+        <div className="dropdown-content">
           <Link to="/signup">Signup</Link>
           <Link to="/login">Login</Link>
           
