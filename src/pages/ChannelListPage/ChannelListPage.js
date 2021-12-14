@@ -15,6 +15,11 @@ function ChannelListPage() {
   //state for the list
   const [cartChannels, setCartChannels] = useState([]);
 
+  //state for the search filter
+  const [channelFilter, setChannelFilter] = useState([])
+  //state for the stream filter
+  const [streamFilter, setStreamFilter ] = useState([])
+
   //function to get all channels
   const getAllChannels = async () => {
     try {
@@ -75,12 +80,49 @@ function ChannelListPage() {
     addChannel();
   }, []); */
 
+
+  //SEARCH BAR FILTER
+
+  const filterChannelList = (char) => {
+    let filteredChannel;
+    //check if the search is empty
+    if(char === ''){
+      filteredChannel = channelFilter;  //if its empty show all the channels
+    } else {
+      filteredChannel = channels.filter((oneChannel) => {
+        return oneChannel.channelName.toLowerCase().includes(char.toLowerCase());
+      });
+    }
+    setChannels(filteredChannel);
+  }
+
+  useEffect(()=>{
+    
+  }, [])
+
+
+
+  //SEARCH FILTER for Streams
+  const filterStreamList = (char) => {
+    let filteredStream;
+    //check if the search is empty
+    if(char === ''){
+      filteredStream = streamFilter;  //if its empty show all the channels
+    } else {
+      filteredStream = channels.filter((oneChannel) => {
+        return oneChannel.channelName.toLowerCase().includes(char.toLowerCase());
+      });
+    }
+    setChannels(filteredStream);
+  }
+
+
   //DISPLAYING ON THE SCREEN
 
   return (
     <div>
       <h1>Channel list</h1>
-      <Searchbar />
+      <Searchbar filterChannelList={filterChannelList} filterStreamList={filterStreamList}/>
       <CustomList cartChannels={cartChannels} addChannel={addChannel} />
       <h2 className="channel-list-title">Channel list</h2>
       <div className="channel-container">
