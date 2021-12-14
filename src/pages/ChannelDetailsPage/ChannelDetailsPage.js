@@ -1,3 +1,4 @@
+import './ChannelDetailsPage.css'
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
@@ -6,6 +7,8 @@ function ChannelDetailPage() {
   //channel states hook
   const [channel, setChannel] = useState(null);
   const { channelId } = useParams();
+
+  console.log("the channel", channel);
 
   //function to get the details of one channel id
   const getChannel = async () => {
@@ -47,8 +50,20 @@ function ChannelDetailPage() {
           <p>
             Official Page: <Link to="">{channel.channelWebsite}</Link>
           </p>
-          <div className="add-btn">
-            <button>Add to my Hybrid Box</button>
+          <div className="description-text">
+            <p>{channel.description}</p>
+          </div>
+          <p>
+            <b>Price:</b> {channel.channelPrice}€
+          </p>
+
+          <div className="btn-container">
+            <div className="add-btn">
+              <button>Add Hybrid Box</button>
+            </div>
+            <Link to="/" className="goback-btn">
+              Back
+            </Link>
           </div>
         </>
       )}

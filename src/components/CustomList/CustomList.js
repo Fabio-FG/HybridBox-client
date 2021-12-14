@@ -3,7 +3,7 @@ import { useState, useEffect, useContext } from "react";
 /* import { AuthContext } from "../../context/auth.context"; */
 import authService from "../../services/auth.service";
 
-function CustomList({ addChannel }) {
+function CustomList({ addChannel, isAdded }) {
   const [cartChannels, setCartChannels] = useState([]);
   /* const { user } = useContext(AuthContext); */
   const getUser = async () => {
@@ -16,7 +16,7 @@ function CustomList({ addChannel }) {
   useEffect(() => {
     getUser();
     
-  }, []);
+  }, [isAdded]);
 
   return (
     <div className="customList">

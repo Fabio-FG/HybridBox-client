@@ -11,14 +11,15 @@ function ChannelListPage() {
   // contains all the channels and streams in the DB
   const [channels, setChannels] = useState([]);
   const [streams, setStreams] = useState([]);
+  const [isAdded, setIsAdded] = useState(false);
 
   //state for the list
   const [cartChannels, setCartChannels] = useState([]);
 
   //state for the search filter
-  const [channelFilter, setChannelFilter] = useState([])
+  const [channelFilter, setChannelFilter] = useState([]);
   //state for the stream filter
-  const [streamFilter, setStreamFilter ] = useState([])
+  const [streamFilter, setStreamFilter] = useState([]);
 
   //function to get all channels
   const getAllChannels = async () => {
@@ -52,8 +53,6 @@ function ChannelListPage() {
     getAllStreams();
   }, []);
 
-  const auxChannels = [];
-
   //function to add the channel to my list
   const addChannel = async (id) => {
     //variable to store the value with a find function to see if the id of the channel exists or not
@@ -67,10 +66,8 @@ function ChannelListPage() {
     try {
       //Used service to get the value from the DB on the backend
       const addedItem = await channelsService.addChannel(id);
-      console.log(addedItem.data);
-      console.log("item added!");
-      setCartChannels(addedItem.data)
-      
+
+      setIsAdded(!isAdded);
     } catch (error) {
       console.log(error);
     }
@@ -80,65 +77,72 @@ function ChannelListPage() {
     addChannel();
   }, []); */
 
-
   //SEARCH BAR FILTER
 
   const filterChannelList = (char) => {
     let filteredChannel;
     //check if the search is empty
-    if(char === ''){
-      filteredChannel = channelFilter;  //if its empty show all the channels
+    if (char === "") {
+      filteredChannel = channelFilter; //if its empty show all the channels
     } else {
       filteredChannel = channels.filter((oneChannel) => {
-        return oneChannel.channelName.toLowerCase().includes(char.toLowerCase());
+        return oneChannel.channelName
+          .toLowerCase()
+          .includes(char.toLowerCase());
       });
     }
     setChannels(filteredChannel);
-  }
+  };
 
-  useEffect(()=>{
-    
-  }, [])
-
-
+  useEffect(() => {}, []);
 
   //SEARCH FILTER for Streams
   const filterStreamList = (char) => {
     let filteredStream;
     //check if the search is empty
-    if(char === ''){
-      filteredStream = streamFilter;  //if its empty show all the channels
+    if (char === "") {
+      filteredStream = streamFilter; //if its empty show all the channels
     } else {
       filteredStream = channels.filter((oneChannel) => {
-        return oneChannel.channelName.toLowerCase().includes(char.toLowerCase());
+        return oneChannel.channelName
+          .toLowerCase()
+          .includes(char.toLowerCase());
       });
     }
     setChannels(filteredStream);
-  }
-
+  };
 
   //DISPLAYING ON THE SCREEN
 
   return (
     <div>
       <h1>Channel list</h1>
-      <Searchbar filterChannelList={filterChannelList} filterStreamList={filterStreamList}/>
-      <CustomList cartChannels={cartChannels} addChannel={addChannel} />
+      <Searchbar
+        filterChannelList={filterChannelList}
+        filterStreamList={filterStreamList}
+      />
+      <CustomList
+        cartChannels={cartChannels}
+        addChannel={addChannel}
+        isAdded={isAdded}
+      />
       <h2 className="channel-list-title">Channel list</h2>
       <div className="channel-container">
         {channels.map((oneChannel) => {
           return (
             <div className="channelCard" key={oneChannel._id}>
               <div className="info-container">
-                <Link to={"/channels/" + oneChannel._id} className="link-service">
-                <img
-                  src={oneChannel.channelImage}
-                  alt={oneChannel.channelName}
-                  className="channel-img"
-                />
+                <Link
+                  to={"/channels/" + oneChannel._id}
+                  className="link-service"
+                >
+                  <img
+                    src={oneChannel.channelImage}
+                    alt={oneChannel.channelName}
+                    className="channel-img"
+                  />
                   <h4>{oneChannel.channelName}</h4>
                 </Link>
-                
               </div>
               <button
                 onClick={() => addChannel(oneChannel._id)}
@@ -157,12 +161,12 @@ function ChannelListPage() {
         {streams.map((oneStream) => {
           return (
             <div className="streamCard" key={oneStream._id}>
-            <div className="info-container">
-
-              <Link to={"/streams/" + oneStream._id} className="link-service">
-                <h4>{oneStream.streamName}</h4>
-              </Link>
-            </div>
+              <div className="info-container">
+                <Link to={"/streams/" + oneStream._id} className="link-service">
+                <img src={oneStream.streamImage} alt={oneStream.streamName} className="stream-img" />
+                  <h4>{oneStream.streamName}</h4>
+                </Link>
+              </div>
               <button className="add-btn">Add to my HybridBox</button>
             </div>
           );
