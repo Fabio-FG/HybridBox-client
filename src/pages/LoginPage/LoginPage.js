@@ -12,6 +12,8 @@ function LoginPage(props) {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
 
+
+
   // Get the function for saving and verifying the token
   const { logInUser } = useContext(AuthContext);
 
@@ -46,9 +48,16 @@ function LoginPage(props) {
     }
   };
 
+
+
+
+ 
+
   return (
     <div className="LoginPage">
       <h1>Login</h1>
+      <button>User</button>
+      <button>Admin</button>
 
       <form onSubmit={handleLoginSubmit}>
         <label>Email:</label>
@@ -63,6 +72,8 @@ function LoginPage(props) {
 
       <p>Don't have an account yet?</p>
       <Link to={"/signup"}> Sign Up</Link>
+
+      
     </div>
   );
 }

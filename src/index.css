@@ -11,7 +11,7 @@
     font-family: "Cedora-RegularStd";
     margin:0;
     padding: 0;
-    background: linear-gradient(356deg, #f56a6a, #f58585, #f79a9a, #746f6f);
+    /* background: linear-gradient(356deg, #f56a6a, #f58585, #f79a9a, #746f6f);
     background-size: 800% 800%;
   
     -webkit-animation: AnimationName 25s ease infinite;
@@ -33,9 +33,9 @@
     0%{background-position:29% 0%}
     50%{background-position:72% 100%}
     100%{background-position:29% 0%}
-  }
+  } */
   
-
+  }
  button,
 select {
   padding: 5px 10px;
