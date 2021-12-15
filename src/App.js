@@ -15,6 +15,7 @@ import ChannelListPage from "./pages/ChannelListPage/ChannelListPage";
 import ChannelDetailPage from "./pages/ChannelDetailsPage/ChannelDetailsPage";
 import StreamDetailPage from "./pages/StreamDetailPage/StreamDetailPage";
 import Footer from "./components/Footer/Footer";
+import EditProfilePage from "./pages/EditProfilePage/EditProfilePage";
 
 
 
@@ -26,6 +27,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/profile" element={<IsPrivate> <ProfilePage /> </IsPrivate>} />
+        <Route path="/edit-profile" element={<IsPrivate> <EditProfilePage /> </IsPrivate>} />
         <Route path="/signup" element={<IsAnon> <SignupPage /> </IsAnon>} />
         <Route path="/login" element={<IsAnon> <LoginPage /> </IsAnon>} />
         

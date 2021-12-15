@@ -25,7 +25,8 @@ function ProfilePage() {
     </div>
       <h2> {user.name}</h2>
       <img src={user.image} alt="profilePic" className="profile-img"/>
-      <p><button className='edit-btn'>Edit Profile</button></p>
+      <br></br>
+      <Link to="/edit-profile"><button className='edit-btn'>Edit Profile</button></Link>
      
 
      

@@ -1,5 +1,5 @@
 import "./CustomList.css";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 /* import { AuthContext } from "../../context/auth.context"; */
 import authService from "../../services/auth.service";
 import { Link } from "react-router-dom";
