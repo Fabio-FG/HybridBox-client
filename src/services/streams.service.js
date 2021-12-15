@@ -26,7 +26,7 @@ class StreamsService {
 
   //Post /add streams
   addStream = async (id) => {
-    return this.api.post(`api/users/streams/${id}`);
+    return this.api.post(`api/users/streams/${id}`, {isAdding: true});
   };
 
   // GET /channels get all streams 
@@ -45,8 +45,8 @@ class StreamsService {
   };
 
   // DELETE /channels/delete/:projectId
-  deleteChannel = async (streamId) => {
-    return this.api.delete(`/streams/${streamId}`);
+  deleteChannel = async (id) => {
+    return this.api.post(`api/users/streams/${id}`, {isAdding: false});
   };
 }
 

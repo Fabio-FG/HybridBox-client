@@ -11,13 +11,19 @@
 
 
 .cart-container-box{
-    background-color: crimson;
+   
     margin: 5px;
     color: white;
     border-radius: 5px;
     padding: 8px;
     font-size: 1.4em;
+    transition-duration: 0.4s;
     
+}
+
+.cart-container-box:hover{
+    transform: scale(1.1);
+    transition-duration: 0.4s;
 }
 
 .price-container{

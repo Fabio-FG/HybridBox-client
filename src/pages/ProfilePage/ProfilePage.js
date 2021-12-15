@@ -23,12 +23,12 @@ function ProfilePage() {
     <div className='profile-page-title'>
       <h1>My HybridBox Zone</h1>
     </div>
-      <h2>Hello, {user.name}</h2>
+      <h2> {user.name}</h2>
       <img src={user.image} alt="profilePic" className="profile-img"/>
       <p><button className='edit-btn'>Edit Profile</button></p>
      
 
-      <p><b>My role:</b>{user.role}</p>
+     
     </div>
       <aside>
       <CustomList />

@@ -1,4 +1,4 @@
-import "./StreamDetailPage.css"
+import "./StreamDetailPage.css";
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
@@ -34,9 +34,18 @@ function StreamDetailPage() {
       <h1>Stream details</h1>
       <p>{stream.streamName}</p>
       <img src={stream.streamImage} alt="streamLogo" />
-      <p>{stream.streamWebsite}</p>
-      <p>Price:{stream.streamPrice}</p>
-      
+      <p>
+        Official Page: <Link to={stream.streamWebsite}>Netflix</Link>
+      </p>
+      <article>{stream.description}</article>
+      <p>
+        <b>Price:</b>
+        {stream.streamPrice}€
+      </p>
+
+      <Link to="/channels">
+        <button className="goback-btn">Back</button>
+      </Link>
     </div>
   );
 }

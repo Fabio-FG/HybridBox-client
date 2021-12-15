@@ -1,30 +1,37 @@
 import "./ChannelListPage.css";
 import channelsService from "../../services/channels.service";
 import streamsService from "../../services/streams.service";
-import authService from "../../services/auth.service";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import Searchbar from "../../components/Searchbar/Searchbar";
 import CustomList from "../../components/CustomList/CustomList";
 
-function ChannelListPage() {
+function ChannelListPage({ channelsProp }) {
   // contains all the channels and streams in the DB
   const [channels, setChannels] = useState([]);
   const [streams, setStreams] = useState([]);
   const [isAdded, setIsAdded] = useState(false);
-  const [isDeleted, setIsDeleted] = useState(false);
-  let isAdding;
+  const [searchChannels, setSearchChannels] = useState([]);
 
-  //copy of channels
-  const [copyChannels, setCopyChannels] = useState([]);
 
-  //state for the list
 
-  //state for the search filter
-  const [channelFilter, setChannelFilter] = useState([]);
-  //state for the stream filter
-  const [streamFilter, setStreamFilter] = useState(channels);
+  //SEARCH BAR FILTER
+
+  const filterChannelList = (char) => {
+    let filteredChannel;
+    //check if the search is empty
+    if (char === "") {
+      setChannels(channels); //if its empty show all the channels
+    } else {
+      filteredChannel = channels.filter((oneChannel) => {
+        return oneChannel.channelName
+          .toLowerCase()
+          .includes(char.toLowerCase());
+      });
+      setChannels(filteredChannel);
+      console.log(filteredChannel);
+    }
+  };
 
   //function to get all channels
   const getAllChannels = async () => {
@@ -33,7 +40,6 @@ function ChannelListPage() {
       const response = await channelsService.getAllChannels();
       /* const response = await axios.get("http://localhost:5005/channels"); */
       setChannels(response.data);
-      setCopyChannels(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -70,41 +76,46 @@ function ChannelListPage() {
     }
   };
 
-  //SEARCH BAR FILTER
-
-  const filterChannelList = (char) => {
-    let filteredChannel;
-    //check if the search is empty
-    if (char === "") {
-      filteredChannel = setChannels(channels); //if its empty show all the channels
-    } else {
-      filteredChannel = channels.filter((oneChannel) => {
-        return oneChannel.channelName
-          .toLowerCase()
-          .includes(char.toLowerCase());
-      });
+  /* ---------------------------------------------------STREAMS------------------------------------ */
+  const getAllStreams = async () => {
+    try {
+      const response = await streamsService.getAllStreams();
+      /*  const response = await axios.get("http://localhost:5005/streams"); */
+      setStreams(response.data);
+    } catch (error) {
+      console.log(error);
     }
-    setChannels(filteredChannel);
-    setCopyChannels(copyChannels);
   };
 
-  useEffect(() => {}, []);
+  //Add stream
 
-  //SEARCH FILTER for Streams
-  const filterStreamList = (char) => {
-    let filteredStream;
-    //check if the search is empty
-    if (char === "") {
-      filteredStream = streamFilter; //if its empty show all the channels
-    } else {
-      filteredStream = channels.filter((oneChannel) => {
-        return oneChannel.channelName
-          .toLowerCase()
-          .includes(char.toLowerCase());
-      });
+  const addStream = async (id) => {
+    try {
+      const addedItem = await streamsService.addStream(id);
+      setIsAdded(!isAdded);
+      console.log("adding");
+    } catch (error) {
+      console.log(error);
     }
-    setChannels(filteredStream);
   };
+
+  //function to delete a channel from my list
+  const deleteStream = async (id) => {
+    try {
+      //use service to get the value and promise from the backend
+      const deletedItem = await streamsService.deleteChannel(id);
+      /* setIsDeleted(!isDeleted);
+      console.log(isDeleted); */
+
+      setIsAdded(!isAdded);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getAllStreams();
+  }, []);
 
   //DISPLAYING ON THE SCREEN
 
@@ -113,6 +124,12 @@ function ChannelListPage() {
       <h1>Channel list</h1>
 
       <h2 className="channel-list-title">Channel list</h2>
+      <Searchbar filterChannelList={filterChannelList} />
+
+      <div className="main-wrapper">
+      <div className="services-wrapper">
+        
+
       <div className="channel-container">
         {channels.map((oneChannel) => {
           return (
@@ -132,7 +149,6 @@ function ChannelListPage() {
               </div>
               <button
                 onClick={() => addChannel(oneChannel._id)}
-                key={oneChannel._id}
                 className="add-btn"
               >
                 Add to HybridBox
@@ -140,7 +156,6 @@ function ChannelListPage() {
               {/* Delete button */}
               <button
                 onClick={() => deleteChannel(oneChannel._id)}
-                key={oneChannel._id}
                 className="add-btn"
               >
                 Delete
@@ -148,6 +163,44 @@ function ChannelListPage() {
             </div>
           );
         })}
+      </div>
+      {/* Streams render */}
+      <h1 className="channel-list-title">Streaming Services list</h1>
+      <div className="stream-container">
+        {streams.map((oneStream) => {
+          return (
+            <div className="streamCard" key={oneStream._id}>
+              <div className="info-container">
+                <Link to={"/streams/" + oneStream._id} className="link-service">
+                  <img
+                    src={oneStream.streamImage}
+                    alt={oneStream.streamName}
+                    className="stream-img"
+                  />
+                  <h4>{oneStream.streamName}</h4>
+                </Link>
+              </div>
+              <button
+                onClick={() => addStream(oneStream._id)}
+                key={oneStream._id}
+                className="add-btn"
+              >
+                Add to HybridBox
+              </button>
+              <button
+                onClick={() => deleteStream(oneStream._id)}
+                className="add-btn"
+              >
+                Delete
+              </button>
+            </div>
+          );
+        })}
+      </div>
+      </div>
+      <div className="custom-list-wrapper">
+        <CustomList isAdded={isAdded} />
+      </div>
       </div>
     </div>
   );
