@@ -15,6 +15,7 @@ import ChannelListPage from "./pages/ChannelListPage/ChannelListPage";
 import ChannelDetailPage from "./pages/ChannelDetailsPage/ChannelDetailsPage";
 import StreamDetailPage from "./pages/StreamDetailPage/StreamDetailPage";
 import Footer from "./components/Footer/Footer";
+import TvGridPage from "./pages/TvGridPage/TvGridPage";
 
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
         <Route path="/signup" element={<IsAnon> <SignupPage /> </IsAnon>} />
         <Route path="/login" element={<IsAnon> <LoginPage /> </IsAnon>} />
         
-        <Route path="/channels" element={<ChannelListPage />} />
+        <Route path="/channels" element={<TvGridPage />} />
         <Route path="/channels/:channelId" element={<ChannelDetailPage /> } />
         <Route path="/streams/:streamId" element={<StreamDetailPage />} />
         

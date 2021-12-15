@@ -3,9 +3,11 @@ import { useState, useEffect, useContext } from "react";
 /* import { AuthContext } from "../../context/auth.context"; */
 import authService from "../../services/auth.service";
 
-function CustomList({ addChannel, isAdded }) {
+function CustomList({ isAdded }) {
   const [cartChannels, setCartChannels] = useState([]);
+  const [cartStreams, setCartStreams] = useState([]);
   /* const { user } = useContext(AuthContext); */
+  
 
   //variables for the channels price
   const itemsPrice = cartChannels.reduce((a, c) => a + c.channelPrice, 0);
@@ -25,6 +27,8 @@ function CustomList({ addChannel, isAdded }) {
   const getUser = async () => {
     const response = await authService.getUser();
     setCartChannels(response.data.listOfChannels);
+    /* setCartStreams(response.data.listOfStreams); */
+
     console.log(response.data);
     /* addChannel(cartChannels) */
   };
@@ -32,6 +36,10 @@ function CustomList({ addChannel, isAdded }) {
   useEffect(() => {
     getUser();
   }, [isAdded]);
+
+  /*   useEffect(() => {
+    getUser();
+  }, [isDeleted]); */
 
   return (
     <div className="customList">
@@ -44,7 +52,29 @@ function CustomList({ addChannel, isAdded }) {
           return (
             <div className="list-container">
               <div className="cart-container-box" key={channel._id}>
+                <img
+                  src={channel.channelImage}
+                  alt={channel.channelName}
+                  className="listed-channel-img"
+                />
+                <br></br>
                 {channel.channelName}
+              </div>
+            </div>
+          );
+        })}
+        {/* STREAMS INTO THE BASKET */}
+        {cartStreams.map((stream) => {
+          return (
+            <div className="list-container">
+              <div className="cart-container-box" key={stream._id}>
+                <img
+                  src={stream.channelImage}
+                  alt={stream.channelName}
+                  className="listed-channel-img"
+                />
+                <br></br>
+                {stream.channelName}
               </div>
             </div>
           );
@@ -53,10 +83,10 @@ function CustomList({ addChannel, isAdded }) {
       {cartChannels.length !== 0 && (
         <>
           <div className="price-container">
-          <hr></hr>
-          <div>Items Price: {itemsPrice.toFixed(2)}€</div>
-          <div>Discount:{discountPrice.toFixed(2)}€</div>
-          <div>Total: {totalPrice.toFixed(2)}€</div>
+            <hr></hr>
+            <div>Items Price: {itemsPrice.toFixed(2)}€</div>
+            <div>Discount:{discountPrice.toFixed(2)}€</div>
+            <div>Total: {totalPrice.toFixed(2)}€</div>
           </div>
         </>
       )}

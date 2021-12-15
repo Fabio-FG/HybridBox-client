@@ -1,5 +1,6 @@
 import "./ChannelListPage.css";
 import channelsService from "../../services/channels.service";
+import streamsService from "../../services/streams.service";
 import authService from "../../services/auth.service";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -12,14 +13,18 @@ function ChannelListPage() {
   const [channels, setChannels] = useState([]);
   const [streams, setStreams] = useState([]);
   const [isAdded, setIsAdded] = useState(false);
+  const [isDeleted, setIsDeleted] = useState(false);
+  let isAdding;
+
+  //copy of channels
+  const [copyChannels, setCopyChannels] = useState([]);
 
   //state for the list
-  const [cartChannels, setCartChannels] = useState([]);
 
   //state for the search filter
   const [channelFilter, setChannelFilter] = useState([]);
   //state for the stream filter
-  const [streamFilter, setStreamFilter] = useState([]);
+  const [streamFilter, setStreamFilter] = useState(channels);
 
   //function to get all channels
   const getAllChannels = async () => {
@@ -28,6 +33,7 @@ function ChannelListPage() {
       const response = await channelsService.getAllChannels();
       /* const response = await axios.get("http://localhost:5005/channels"); */
       setChannels(response.data);
+      setCopyChannels(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -36,21 +42,6 @@ function ChannelListPage() {
   //Useeffect hook
   useEffect(() => {
     getAllChannels();
-  }, []);
-
-  //function to get all streams
-
-  const getAllStreams = async () => {
-    try {
-      const response = await axios.get("http://localhost:5005/streams");
-      setStreams(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    getAllStreams();
   }, []);
 
   //function to add the channel to my list
@@ -65,9 +56,19 @@ function ChannelListPage() {
     }
   };
 
-  /*  useEffect(() => {
-    addChannel();
-  }, []); */
+  //function to delete a channel from my list
+  const deleteChannel = async (id) => {
+    try {
+      //use service to get the value and promise from the backend
+      const deletedItem = await channelsService.deleteChannel(id);
+      /* setIsDeleted(!isDeleted);
+      console.log(isDeleted); */
+
+      setIsAdded(!isAdded);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   //SEARCH BAR FILTER
 
@@ -75,7 +76,7 @@ function ChannelListPage() {
     let filteredChannel;
     //check if the search is empty
     if (char === "") {
-      filteredChannel = channelFilter; //if its empty show all the channels
+      filteredChannel = setChannels(channels); //if its empty show all the channels
     } else {
       filteredChannel = channels.filter((oneChannel) => {
         return oneChannel.channelName
@@ -84,6 +85,7 @@ function ChannelListPage() {
       });
     }
     setChannels(filteredChannel);
+    setCopyChannels(copyChannels);
   };
 
   useEffect(() => {}, []);
@@ -109,75 +111,43 @@ function ChannelListPage() {
   return (
     <div>
       <h1>Channel list</h1>
-      <Searchbar
-        filterChannelList={filterChannelList}
-        filterStreamList={filterStreamList}
-      />
-      <div className="main-wrapper">
-        <div className="services-wrapper">
-          <h2 className="channel-list-title">Channel list</h2>
-          <div className="channel-container">
-            {channels.map((oneChannel) => {
-              return (
-                <div className="channelCard" key={oneChannel._id}>
-                  <div className="info-container">
-                    <Link
-                      to={"/channels/" + oneChannel._id}
-                      className="link-service"
-                    >
-                      <img
-                        src={oneChannel.channelImage}
-                        alt={oneChannel.channelName}
-                        className="channel-img"
-                      />
-                      <h4>{oneChannel.channelName}</h4>
-                    </Link>
-                  </div>
-                  <button
-                    onClick={() => addChannel(oneChannel._id)}
-                    key={oneChannel._id}
-                    className="add-btn"
-                  >
-                    Add to HybridBox
-                  </button>
-                </div>
-              );
-            })}
-          </div>
-          {/* Streams render */}
-          <h1 className="channel-list-title">Streaming Services list</h1>
-          <div className="stream-container">
-            {streams.map((oneStream) => {
-              return (
-                <div className="streamCard" key={oneStream._id}>
-                  <div className="info-container">
-                    <Link
-                      to={"/streams/" + oneStream._id}
-                      className="link-service"
-                    >
-                      <img
-                        src={oneStream.streamImage}
-                        alt={oneStream.streamName}
-                        className="stream-img"
-                      />
-                      <h4>{oneStream.streamName}</h4>
-                    </Link>
-                  </div>
-                  <button className="add-btn">Add to my HybridBox</button>
-                </div>
-              );
-            })}
-          </div>
-        </div>
 
-        {/* CUSTOM LIST RENDER */}
-        <div className="custom-list-wrapper">
-          <CustomList
-            cartChannels={cartChannels}
-            addChannel={addChannel}
-            isAdded={isAdded}
-          />
-        </div>
+      <h2 className="channel-list-title">Channel list</h2>
+      <div className="channel-container">
+        {channels.map((oneChannel) => {
+          return (
+            <div className="channelCard" key={oneChannel._id}>
+              <div className="info-container">
+                <Link
+                  to={"/channels/" + oneChannel._id}
+                  className="link-service"
+                >
+                  <img
+                    src={oneChannel.channelImage}
+                    alt={oneChannel.channelName}
+                    className="channel-img"
+                  />
+                  <h4>{oneChannel.channelName}</h4>
+                </Link>
+              </div>
+              <button
+                onClick={() => addChannel(oneChannel._id)}
+                key={oneChannel._id}
+                className="add-btn"
+              >
+                Add to HybridBox
+              </button>
+              {/* Delete button */}
+              <button
+                onClick={() => deleteChannel(oneChannel._id)}
+                key={oneChannel._id}
+                className="add-btn"
+              >
+                Delete
+              </button>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

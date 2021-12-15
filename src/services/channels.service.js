@@ -24,9 +24,9 @@ class ChannelsService {
     return this.api.post("/channels", requestBody);
   };
 
-  //Post /âdd channels
+  //Post /add channels
   addChannel = async (id) => {
-    return this.api.post(`api/users/channels/${id}`);
+    return this.api.post(`api/users/channels/${id}`, {isAdding: true});
   };
 
   // GET /channels
@@ -45,8 +45,8 @@ class ChannelsService {
   };
 
   // DELETE /channels/delete/:projectId
-  deleteChannel = async (channelId) => {
-    return this.api.delete(`/channels/delete/${channelId}`);
+  deleteChannel = async (id) => {
+    return this.api.post(`api/users/channels/${id}`, {isAdding: false});
   };
 }
 

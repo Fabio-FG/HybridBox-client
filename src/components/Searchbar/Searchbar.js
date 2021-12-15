@@ -5,6 +5,7 @@ import { useState , useEffect } from 'react';
 function Searchbar({filterChannelList, filterStreamList}) {
     //Use State for the searchbar
     const [search, setSearch] = useState()
+    const [allItems, setAllItems] = useState()
 
 
     //searchn input handle
@@ -15,6 +16,7 @@ function Searchbar({filterChannelList, filterStreamList}) {
 
         //set the state to the stream event
         filterStreamList(event.target.value);
+        
     }
 
 
