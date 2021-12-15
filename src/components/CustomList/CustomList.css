@@ -1,7 +1,15 @@
+:root {
+    --main-color: crimson;
+    --main-bg-color: white;
+    --font-color: grey;
+  }
+
+
+
 .item{
-    background-color: rgba(255, 255, 255, 0.178);
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 85%;
     margin: auto;
     flex-wrap: wrap;
@@ -11,13 +19,16 @@
 
 
 .cart-container-box{
-   
+    
     margin: 5px;
-    color: white;
+    color: var(--font-color);
     border-radius: 5px;
     padding: 8px;
     font-size: 1.4em;
     transition-duration: 0.4s;
+    width: 75px;
+    height: 95px;
+    font-size: 1em;
     
 }
 
@@ -27,10 +38,10 @@
 }
 
 .price-container{
-    width: 40%;
+    width: 90%;
     margin: auto;
     margin-top: 3%;
-    text-align: justify
+    text-align: justify;
 }
 
 .price-container hr {
@@ -44,7 +55,19 @@
     margin-top: 15%;
 }
 
+.price-text{
+ 
+    margin-right: 3%;
+    font-size: 1.25em;
+    text-align: right;
+}
+
+.total-price{
+    margin-top: 40px;
+    font-size: 1.27em;
+    text-align: right;
+}
 .listed-channel-img{
-    height: 60px;
-    width: 70px;
+    height: 50px;
+    width: 60px;
 }

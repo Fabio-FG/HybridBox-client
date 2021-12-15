@@ -1,3 +1,4 @@
+import './Searchbar.css'
 import React from 'react';
 import { useState , useEffect } from 'react';
 
@@ -20,9 +21,9 @@ function Searchbar({filterChannelList}) {
 
 
   return (
-    <form>
+    <div className='search-bar'>
       <input type="text" placeholder="Search channel" value={search} onChange={handleSearch}/>
-    </form>
+    </div>
   );
 }
 

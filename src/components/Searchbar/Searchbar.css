@@ -1,0 +1,10 @@
+:root {
+    --main-color: crimson;
+    --main-bg-color: white;
+  }
+
+
+.search-bar{
+    background-color: rgb(219, 23, 62);
+    width: 100%;
+}

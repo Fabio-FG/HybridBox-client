@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Searchbar from "../../components/Searchbar/Searchbar";
 import CustomList from "../../components/CustomList/CustomList";
+import addIcon from "../../icons/add-icon.svg";
+import deleteIcon from "../../icons/delete-icon.svg"
 
 function ChannelListPage({ channelsProp }) {
   // contains all the channels and streams in the DB
@@ -121,15 +123,16 @@ function ChannelListPage({ channelsProp }) {
 
   return (
     <div>
-      <h1>Channel list</h1>
+      
 
-      <h2 className="channel-list-title">Channel list</h2>
       <Searchbar filterChannelList={filterChannelList} />
+      <h1 className="channel-list-title">Channel list</h1>
 
       <div className="main-wrapper">
       <div className="services-wrapper">
         
 
+      <h2 className="channel-list-title">Channel grid</h2>
       <div className="channel-container">
         {channels.map((oneChannel) => {
           return (
@@ -147,25 +150,28 @@ function ChannelListPage({ channelsProp }) {
                   <h4>{oneChannel.channelName}</h4>
                 </Link>
               </div>
+
+              <div className="btn-wrapper">
               <button
                 onClick={() => addChannel(oneChannel._id)}
                 className="add-btn"
               >
-                Add to HybridBox
+               <img src={addIcon} alt="" className="icon"/> 
               </button>
               {/* Delete button */}
               <button
                 onClick={() => deleteChannel(oneChannel._id)}
                 className="add-btn"
               >
-                Delete
+                <img src={deleteIcon} alt="" className="icon"/> 
               </button>
+              </div>
             </div>
           );
         })}
       </div>
       {/* Streams render */}
-      <h1 className="channel-list-title">Streaming Services list</h1>
+      <h1 className="channel-list-title">Streaming Services grid</h1>
       <div className="stream-container">
         {streams.map((oneStream) => {
           return (
@@ -180,19 +186,23 @@ function ChannelListPage({ channelsProp }) {
                   <h4>{oneStream.streamName}</h4>
                 </Link>
               </div>
+              <div className="btn-wrapper">
               <button
                 onClick={() => addStream(oneStream._id)}
                 key={oneStream._id}
                 className="add-btn"
               >
-                Add to HybridBox
+              
+                 <img src={addIcon} alt="" className="icon"/> 
               </button>
               <button
                 onClick={() => deleteStream(oneStream._id)}
                 className="add-btn"
               >
-                Delete
+                <img src={deleteIcon} alt="" className="icon"/> 
+             
               </button>
+              </div>
             </div>
           );
         })}

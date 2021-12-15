@@ -1,4 +1,10 @@
 /* src/index.css */
+:root {
+  --main-color: crimson;
+  --main-bg-color: white;
+}
+
+
 @font-face {
   font-family: "Cedora-RegularStd";
   src: local("Cedora-RegularStd"),
@@ -11,7 +17,8 @@
     font-family: "Cedora-RegularStd";
     margin:0;
     padding: 0;
-    background-color: rgb(204, 204, 204);
+    background-color: var(--main-bg-color);
+    color: var(--main-color)
     /* background: linear-gradient(356deg, #f56a6a, #f58585, #f79a9a, #746f6f);
     background-size: 800% 800%;
   
