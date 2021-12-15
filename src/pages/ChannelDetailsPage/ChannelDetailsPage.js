@@ -65,10 +65,7 @@ function ChannelDetailPage() {
           </p>
 
           <div className="btn-container">
-            <button className="add-detail-btn">
-              Add<br></br>
-              Hybrid Box
-            </button>
+           
 
             <Link to="/channels">
               <button className="goback-btn">Back</button>
