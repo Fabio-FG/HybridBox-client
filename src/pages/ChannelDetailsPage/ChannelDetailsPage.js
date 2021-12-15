@@ -34,17 +34,14 @@ function ChannelDetailPage() {
   //DISPLAYING THIS
   return (
     <div>
-      <h2>Details</h2>
       {channel && (
         <>
           <img
             src={channel.channelImage}
             alt="channelLogo"
-            style={{
-              height: "200px",
-              width: "250px",
-            }}
+            className="details-logo-img"
           />
+          <h2 className="details-title">Details</h2>
           <div className="channel-info-text">
             <p>
               <b>Channel Name:</b> {channel.channelName}

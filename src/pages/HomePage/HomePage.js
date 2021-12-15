@@ -11,6 +11,9 @@ function HomePage() {
       
       <h3 className="intro-text">Customise your TV channels deals with HybridBox. Now you can truly see what you pay for.</h3>
       </div>
+
+      {/* Landing page stuff */}
+      
     </div>
   );
 }

@@ -32,12 +32,12 @@ function ProfilePage() {
     </div>
       <aside>
       <CustomList />
-      <hr></hr>
-      <div className='prices-container'>
+      
+     {/*  <div className='prices-container'>
       <h4>Qty:</h4>
       <h4>Discount:</h4>
       <h4>Total Price:</h4>
-      </div>
+      </div> */}
 
       <div className='checkout'>
         <button className='checkout-btn'>Checkout</button>

@@ -1,10 +1,12 @@
 .item{
-    background-color: rgba(255, 255, 255, 0.164);
+    background-color: rgba(255, 255, 255, 0.178);
     display: flex;
     justify-content: center;
-    width: 30%;
+    width: 80%;
     margin: auto;
     flex-wrap: wrap;
+    margin-top: 10%;
+    margin-bottom: 8%;
 }
 
 
@@ -15,4 +17,22 @@
     border-radius: 5px;
     padding: 8px;
     font-size: 1.4em;
+}
+
+.price-container{
+    width: 40%;
+    margin: auto;
+    margin-top: 3%;
+    text-align: justify
+}
+
+.price-container hr {
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+.customList h3{
+    color: crimson;
+    font-size: 1.9em;
+    margin-top: 15%;
 }

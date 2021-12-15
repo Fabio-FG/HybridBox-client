@@ -55,14 +55,6 @@ function ChannelListPage() {
 
   //function to add the channel to my list
   const addChannel = async (id) => {
-    //variable to store the value with a find function to see if the id of the channel exists or not
-    /*  const exist = cartChannels.find(channelItem => channelItem._id === channel._id); */
-    //conditional - what will happen if we find the id
-    /* if(exist){
-      console.log( setCartChannels("added"));
-
-    } */
-
     try {
       //Used service to get the value from the DB on the backend
       const addedItem = await channelsService.addChannel(id);
@@ -121,56 +113,71 @@ function ChannelListPage() {
         filterChannelList={filterChannelList}
         filterStreamList={filterStreamList}
       />
-      <CustomList
-        cartChannels={cartChannels}
-        addChannel={addChannel}
-        isAdded={isAdded}
-      />
-      <h2 className="channel-list-title">Channel list</h2>
-      <div className="channel-container">
-        {channels.map((oneChannel) => {
-          return (
-            <div className="channelCard" key={oneChannel._id}>
-              <div className="info-container">
-                <Link
-                  to={"/channels/" + oneChannel._id}
-                  className="link-service"
-                >
-                  <img
-                    src={oneChannel.channelImage}
-                    alt={oneChannel.channelName}
-                    className="channel-img"
-                  />
-                  <h4>{oneChannel.channelName}</h4>
-                </Link>
-              </div>
-              <button
-                onClick={() => addChannel(oneChannel._id)}
-                key={oneChannel._id}
-                className="add-btn"
-              >
-                Add to HybridBox
-              </button>
-            </div>
-          );
-        })}
-      </div>
-      {/* Streams render */}
-      <h1 className="channel-list-title">Streaming Services list</h1>
-      <div className="stream-container">
-        {streams.map((oneStream) => {
-          return (
-            <div className="streamCard" key={oneStream._id}>
-              <div className="info-container">
-                <Link to={"/streams/" + oneStream._id} className="link-service">
-                <img src={oneStream.streamImage} alt={oneStream.streamName} className="stream-img" />
-                  <h4>{oneStream.streamName}</h4>
-                </Link>
-              </div>
-              <button className="add-btn">Add to my HybridBox</button>
-            </div>
-          );
-        })}
+      <div className="main-wrapper">
+        <div className="services-wrapper">
+          <h2 className="channel-list-title">Channel list</h2>
+          <div className="channel-container">
+            {channels.map((oneChannel) => {
+              return (
+                <div className="channelCard" key={oneChannel._id}>
+                  <div className="info-container">
+                    <Link
+                      to={"/channels/" + oneChannel._id}
+                      className="link-service"
+                    >
+                      <img
+                        src={oneChannel.channelImage}
+                        alt={oneChannel.channelName}
+                        className="channel-img"
+                      />
+                      <h4>{oneChannel.channelName}</h4>
+                    </Link>
+                  </div>
+                  <button
+                    onClick={() => addChannel(oneChannel._id)}
+                    key={oneChannel._id}
+                    className="add-btn"
+                  >
+                    Add to HybridBox
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+          {/* Streams render */}
+          <h1 className="channel-list-title">Streaming Services list</h1>
+          <div className="stream-container">
+            {streams.map((oneStream) => {
+              return (
+                <div className="streamCard" key={oneStream._id}>
+                  <div className="info-container">
+                    <Link
+                      to={"/streams/" + oneStream._id}
+                      className="link-service"
+                    >
+                      <img
+                        src={oneStream.streamImage}
+                        alt={oneStream.streamName}
+                        className="stream-img"
+                      />
+                      <h4>{oneStream.streamName}</h4>
+                    </Link>
+                  </div>
+                  <button className="add-btn">Add to my HybridBox</button>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* CUSTOM LIST RENDER */}
+        <div className="custom-list-wrapper">
+          <CustomList
+            cartChannels={cartChannels}
+            addChannel={addChannel}
+            isAdded={isAdded}
+          />
+        </div>
       </div>
     </div>
   );
