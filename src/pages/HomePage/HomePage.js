@@ -1,6 +1,5 @@
 import "./HomePage.css";
 import "animate.css/animate.min.css";
-import ScrollAnimation from "react-animate-on-scroll";
 import "aos/dist/aos.css";
 import Aos from "aos";
 import { useEffect } from "react";
@@ -28,7 +27,7 @@ function HomePage() {
         </h3>
       </div>
 
-      {/* Landing page stuff */}
+ 
       <div className="box-1" data-aos="fade-up">
         <div className="how-wrapper">
           <h3>How does HybridBox work?</h3>
@@ -38,13 +37,16 @@ function HomePage() {
             cross-searching the prices and sales promotions from global Internet
             Service Providers and Media companies and applying a HybridBox
             member discount on top of it! HybridBox has many protocols with
-            different international providers.{" "}
+            different international providers.
           </p>
         </div>
       </div>
+
+ 
       <div className="box">
         <h2 className="why-title">Why HybridBox</h2>
         <div className="why-box">
+         
           <div data-aos="fade-left" className="quality-box">
             <h5 className="quality-title">Quality</h5>
             <p className="quality-text">
@@ -53,7 +55,7 @@ function HomePage() {
               HybridBox's values.
             </p>
           </div>
-          <div div data-aos="fade-right" className="price-box">
+          <div data-aos="fade-right" className="price-box">
             <h5 className="price-title">Price</h5>
             <p className="price-text">
               We believe that everyone should have the same opportunities and so
@@ -71,7 +73,7 @@ function HomePage() {
           </div>
         </div>
       </div>
-
+  {/* 
       <div className="bg-wrapper">
         <div className="box">
           <h3 className="dunno-title">Don't know what to choose?</h3>
@@ -137,7 +139,7 @@ function HomePage() {
       </div>
       <div className="box">
       
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -1,9 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import './SignupPage.css'
-
-import authService from "../../services/auth.service";
+import "./SignupPage.css";
 
 function SignupPage(props) {
   const [email, setEmail] = useState("");
@@ -23,17 +21,14 @@ function SignupPage(props) {
       // Create an object representing the request body
       const requestBody = { email, password, name };
 
-      const authToken = localStorage.getItem('authToken');
-      await axios.post(
-        'http://localhost:5005/auth/signup',
-        requestBody,
-        { headers: { Authorization: `Bearer ${authToken}`} }
-      )
+      const authToken = localStorage.getItem("authToken");
+      await axios.post("http://localhost:5005/auth/signup", requestBody, {
+        headers: { Authorization: `Bearer ${authToken}` },
+      });
 
       // or with a service
       // await authService.signup(requestBody);
 
-      
       // If the request is successful navigate to login page
       navigate("/login");
     } catch (error) {
@@ -44,40 +39,52 @@ function SignupPage(props) {
 
   return (
     <div className="signup-page">
-    <div className="signup-bg">
-    <div className="signup-wrapper">
+      <div className="signup-bg">
+        <div className="signup-wrapper">
+          <h1>Sign Up</h1>
 
+          <form onSubmit={handleSignupSubmit}>
+            <label>Name</label>
+            <input
+              type="text"
+              name="name"
+              value={name}
+              onChange={handleName}
+              placeholder="Name"
+            />
 
+            <label>Email</label>
+            <input
+              type="text"
+              name="email"
+              value={email}
+              onChange={handleEmail}
+              placeholder="Email"
+            />
 
-      <h1>Sign Up</h1>
+            <label>Password</label>
+            <input
+              type="password"
+              name="password"
+              value={password}
+              onChange={handlePassword}
+              placeholder="Password"
+            />
 
-      <form onSubmit={handleSignupSubmit}>
-        <label>Name</label>
-        <input type="text" name="name" value={name} onChange={handleName} placeholder="Name" />
+            <button type="submit" className="signup-btn">
+              Sign Up
+            </button>
+          </form>
 
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-        <label>Email</label>
-        <input type="text" name="email" value={email} onChange={handleEmail} placeholder="Email" />
-
-        <label>Password</label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePassword}
-          placeholder="Password"
-        />
-
-
-        <button type="submit" className="signup-btn">Sign Up</button>
-      </form>
-
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
-
-      <p>Already have account?</p>
-      <Link to={"/login"} className="login-link"> Login</Link>
-    </div>
-    </div>
+          <p>Already have account?</p>
+          <Link to={"/login"} className="login-link">
+            {" "}
+            Login
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

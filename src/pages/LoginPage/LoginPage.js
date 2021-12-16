@@ -1,19 +1,14 @@
 // src/pages/LoginPage.js
-import './LoginPage.css'
+import "./LoginPage.css";
 import axios from "axios";
 import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
 
-
-import authService from "../../services/auth.service";
-
 function LoginPage(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
-
-
 
   // Get the function for saving and verifying the token
   const { logInUser } = useContext(AuthContext);
@@ -49,41 +44,45 @@ function LoginPage(props) {
     }
   };
 
-
-
-
- 
-
   return (
     <div className="login-page">
-    <div className="login-bg">
-    <div className='login-wrapper'>
+      <div className="login-bg">
+        <div className="login-wrapper">
+          <h1 className="title">Login</h1>
 
-    
+          <form onSubmit={handleLoginSubmit}>
+            <label>Email:</label>
+            <input
+              type="text"
+              name="email"
+              value={email}
+              onChange={handleEmail}
+              placeholder="Email"
+            />
 
+            <label>Password:</label>
+            <input
+              type="password"
+              name="password"
+              value={password}
+              onChange={handlePassword}
+              placeholder="Password"
+            />
 
-      <h1 className='title'>Login</h1>
-      
-     
+            <button type="submit" className="login-btn">
+              Login
+            </button>
+          </form>
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-      <form onSubmit={handleLoginSubmit}>
-        <label>Email:</label>
-        <input type="text" name="email" value={email} onChange={handleEmail} placeholder="Email"/>
-
-        <label>Password:</label>
-        <input type="password" name="password" value={password} onChange={handlePassword} placeholder="Password"/>
-
-        <button type="submit" className="login-btn">Login</button>
-      </form>
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
-
-      <p className='no-acc'>Don't have an account yet?</p>
-      <Link to={"/signup"} className='signup-link'> Sign Up</Link>
-
+          <p className="no-acc">Don't have an account yet?</p>
+          <Link to={"/signup"} className="signup-link">
+            {" "}
+            Sign Up
+          </Link>
+        </div>
       </div>
     </div>
-    </div>
-    
   );
 }
 
