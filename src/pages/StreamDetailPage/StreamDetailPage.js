@@ -2,6 +2,7 @@ import "./StreamDetailPage.css";
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
+import streamsService from "../../services/streams.service";
 
 function StreamDetailPage() {
   //Streams states hook
@@ -12,9 +13,10 @@ function StreamDetailPage() {
 
   const getStream = async () => {
     try {
-      const response = await axios.get(
-        "http://localhost:5005/streams/" + streamId
-      );
+      
+     const response = await streamsService.getStream(streamId)
+
+    
       const oneStream = response.data;
 
       setStream(oneStream);
