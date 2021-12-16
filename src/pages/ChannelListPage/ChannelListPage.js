@@ -14,6 +14,7 @@ function ChannelListPage({ channelsProp }) {
   const [streams, setStreams] = useState([]);
   const [isAdded, setIsAdded] = useState(false);
   const [searchChannels, setSearchChannels] = useState([]);
+  const [searchStreams, setSearchStreams] = useState([]);
 
   //SEARCH BAR FILTER
 
@@ -25,12 +26,21 @@ function ChannelListPage({ channelsProp }) {
     setSearchChannels(filteredChannel);
   };
 
+  //SEARCH BAR FILTER FOR STREAMS
+
+  const filterStreamList = (char) => {
+    let filteredStream;
+    filteredStream = streams.filter((oneStream) => {
+      return oneStream.streamName.toLowerCase().includes(char.toLowerCase());
+    });
+    setSearchStreams(filteredStream);
+  }
+
   //function to get all channels
   const getAllChannels = async () => {
     try {
       //using services to get all channels from the backend
       const response = await channelsService.getAllChannels();
-      /* const response = await axios.get("http://localhost:5005/channels"); */
       setChannels(response.data);
       setSearchChannels(response.data);
     } catch (error) {
@@ -60,8 +70,7 @@ function ChannelListPage({ channelsProp }) {
     try {
       //use service to get the value and promise from the backend
       const deletedItem = await channelsService.deleteChannel(id);
-      /* setIsDeleted(!isDeleted);
-      console.log(isDeleted); */
+   
 
       setIsAdded(!isAdded);
     } catch (error) {
@@ -73,8 +82,8 @@ function ChannelListPage({ channelsProp }) {
   const getAllStreams = async () => {
     try {
       const response = await streamsService.getAllStreams();
-      /*  const response = await axios.get("http://localhost:5005/streams"); */
       setStreams(response.data);
+      setSearchStreams(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -113,8 +122,8 @@ function ChannelListPage({ channelsProp }) {
 
   return (
     <div>
-      <Searchbar filterChannelList={filterChannelList} />
-      <h1 className="channel-list-title">Channel list</h1>
+      <Searchbar filterChannelList={filterChannelList}  filterStreamList={filterStreamList} />
+      <h1 className="channel-list-title">Channel and Stream Services</h1>
 
       <div className="main-wrapper">
         <div className="services-wrapper">
@@ -159,7 +168,7 @@ function ChannelListPage({ channelsProp }) {
           {/* Streams render */}
           <h1 className="channel-list-title">Streaming Services grid</h1>
           <div className="stream-container">
-            {streams.map((oneStream) => {
+            {searchStreams.map((oneStream) => {
               return (
                 <div className="streamCard" key={oneStream._id}>
                   <div className="info-container">

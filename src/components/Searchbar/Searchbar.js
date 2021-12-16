@@ -3,7 +3,7 @@ import React from 'react';
 import { useState , useEffect } from 'react';
 
 
-function Searchbar({filterChannelList}) {
+function Searchbar({filterChannelList, filterStreamList}) {
     //Use State for the searchbar
     const [search, setSearch] = useState("")
 
@@ -13,8 +13,8 @@ function Searchbar({filterChannelList}) {
         //set the state to the event
         setSearch(event.target.value);
         filterChannelList(event.target.value);
-
-        //set the state to the stream event
+        filterStreamList(event.target.value);
+       
         
         
     }
