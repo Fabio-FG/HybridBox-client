@@ -7,4 +7,13 @@
 .search-bar{
     background-color: rgb(219, 23, 62);
     width: 100%;
+    top: 0;
+    display: flex;
+}
+
+.search-bar input{
+  
+  margin-left: auto;
+  margin-right: 8%;
+  
 }

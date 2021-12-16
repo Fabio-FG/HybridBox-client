@@ -20,20 +20,86 @@ function HomePage() {
       {/* Landing page stuff */}
       <div className="box">
         <h3>How does HybridBox work?</h3>
+
+        <p>
+          HybridBox generates the best deal available for you by cross-searching
+          the prices and sales promotions from global Internet Service Providers
+          and Media companies and applying a HybridBox member discount on top of
+          it! HybridBox has many protocols with different international
+          providers.{" "}
+        </p>
       </div>
+
       <div className="box">
         <h3>Why HybridBox</h3>
-        <p>Quality</p>
-        <p>Price</p>
-        <p>Freedom</p>
+        <div className="why-box">
+          <p>Quality</p>
+          <p>
+            HybridBox believes that quality is part of having an excellent
+            product. Therefore excellence and quality are imprint in HybridBox's
+            values.
+          </p>
+          <p>Price</p>
+          <p>
+            We believe that everyone should have the same opportunities and so
+            HybridBox tries to accomodate to all types of socio-economic
+            classes.
+          </p>
+          <p>Freedom</p>
+          <p>
+            Because HybridBox believes that freedom is part of Human nature. In
+            this day and age with so many restricted freedom aspects in our
+            lives, HybridBox brings real freedom to the users.
+          </p>
+        </div>
       </div>
       <div className="box">
         <h3>Don't know what to choose? Check these deals</h3>
-        <p>HybridBox provides pre-made TV stream deals that include some of the most popular channels and streaming services for those who have a hard time on what to pick.</p>
+        <p>
+          HybridBox provides pre-made TV stream deals that include some of the
+          most popular channels and streaming services for those who have a hard
+          time on what to pick.
+        </p>
         <div className="deals-container">
-          <div className="deal-box">Deal 1</div>
-          <div className="deal-box">Deal 2</div>
-          <div className="deal-box">Deal 3</div>
+          <div className="deal-box">
+            <div className="deal-wrapper">
+              <h3>Netflix n' chill</h3>
+              <p>Netflix</p>
+              <p>TVCine 1</p>
+              <p>TVCine 2</p>
+              <p>TVCine 3</p>
+              <p>TVCine 4</p>
+            </div>
+            <div className="btn-wrapper">
+              <button className="learn-btn">Learn More</button>
+            </div>
+          </div>
+          <div className="deal-box">
+            <div className="deal-wrapper">
+              <h3>The AmazoNimate</h3>
+              <p>Amazon Prime</p>
+              <p>Discovery Channel</p>
+              <p>Disney +</p>
+              <p>Nickelodeon</p>
+              <p>Crunchyroll</p>
+            </div>
+            <div className="btn-wrapper">
+              <button className="learn-btn">Learn More</button>
+            </div>
+          </div>
+          <div className="deal-box">
+            <div className="deal-wrapper">
+              <h3>The Oriental</h3>
+              <p>Tencent Video</p>
+              <p>iQIYI</p>
+              <p>KBS World</p>
+              <p>Phoenix Channel</p>
+              <p>NHK</p>
+            </div>
+            <div className="btn-wrapper">
+              <button className="learn-btn">Learn More</button>
+            </div>
+          </div>
         </div>
       </div>
       <div className="box">

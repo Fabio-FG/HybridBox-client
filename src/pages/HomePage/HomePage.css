@@ -33,21 +33,39 @@
   margin: 3%;
 }
 
-
-.deals-container{
+.deals-container {
   background-color: cyan;
   display: flex;
   flex-direction: row;
   margin: 2%;
   justify-content: center;
-  
 }
 
-
-.deal-box{
+.deal-box {
   background-color: lightgreen;
   width: 20%;
   margin: 20px;
-  height: 300px;
+}
+
+.deal-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.why-box {
+  display: flex;
+  background-color: pink;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.btn-wrapper {
+  justify-content: space-between;
+  flex-direction: column;
   
+  display: flex;
+}
+
+.learn-btn {
+ margin-top: 30px;
+ 
 }
