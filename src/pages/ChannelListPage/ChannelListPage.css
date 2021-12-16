@@ -55,6 +55,13 @@
   
 }
 
+.btn-wrapper{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin: 5px;
+  flex-wrap: wrap;
+}
 .add-btn {
   background-color: var(--main-bg-color);
   color: var(--font-color);
@@ -62,13 +69,13 @@
   border-radius: 5px;
   border: none;
   font-size: 0.8em;
- 
   margin: auto;
   margin-top: -5px;
   padding: 5px;
   transition-duration: 0.5s;
   cursor: pointer;
   margin: 5px;
+  width: 20px;
 }
 
 .add-btn:hover {
@@ -137,11 +144,6 @@
   flex-wrap: nowrap;
 }
 
-.btn-wrapper{
-  display: flex;
-  justify-content: center;
-  margin: 5px;
-}
 
 
 .icon{

@@ -92,7 +92,7 @@ function CustomList({ isAdded }) {
           );
         })}
       </div>
-      {cartChannels.length !== 0 && (
+      {(cartChannels.length !== 0 || cartStreams.length !== 0 ) && (
         <>
           <div className="price-container">
             <hr></hr>

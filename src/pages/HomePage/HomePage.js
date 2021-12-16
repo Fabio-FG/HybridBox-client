@@ -54,12 +54,15 @@ function HomePage() {
         </div>
       </div>
       <div className="box">
+      <div className="bg-wrapper">
+
         <h3>Don't know what to choose? Check these deals</h3>
         <p>
           HybridBox provides pre-made TV stream deals that include some of the
           most popular channels and streaming services for those who have a hard
           time on what to pick.
         </p>
+      </div>
         <div className="deals-container">
           <div className="deal-box">
             <div className="deal-wrapper">
