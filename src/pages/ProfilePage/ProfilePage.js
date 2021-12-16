@@ -5,7 +5,7 @@ import { AuthContext } from "../../context/auth.context";
 
 function ProfilePage() {
   // Get the value from the context
-  const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
+  const {  user} = useContext(AuthContext);
 
   console.log("list", user);
   //set the user state

@@ -29,7 +29,7 @@ function ChannelDetailPage() {
   //Useeffect hook
   useEffect(() => {
     getChannel();
-  }, []);
+  }, );
 
   //DISPLAYING THIS
   return (

@@ -57,7 +57,7 @@ function ChannelListPage({ channelsProp }) {
   const addChannel = async (id) => {
     try {
       //Used service to get the value from the DB on the backend
-      const addedItem = await channelsService.addChannel(id);
+      await channelsService.addChannel(id);
 
       setIsAdded(!isAdded);
     } catch (error) {
@@ -69,7 +69,7 @@ function ChannelListPage({ channelsProp }) {
   const deleteChannel = async (id) => {
     try {
       //use service to get the value and promise from the backend
-      const deletedItem = await channelsService.deleteChannel(id);
+       await channelsService.deleteChannel(id);
    
 
       setIsAdded(!isAdded);
@@ -93,7 +93,7 @@ function ChannelListPage({ channelsProp }) {
 
   const addStream = async (id) => {
     try {
-      const addedItem = await streamsService.addStream(id);
+     await streamsService.addStream(id);
       setIsAdded(!isAdded);
     } catch (error) {
       console.log(error);
@@ -104,7 +104,7 @@ function ChannelListPage({ channelsProp }) {
   const deleteStream = async (id) => {
     try {
       //use service to get the value and promise from the backend
-      const deletedItem = await streamsService.deleteChannel(id);
+       await streamsService.deleteChannel(id);
       /* setIsDeleted(!isDeleted);
       console.log(isDeleted); */
 

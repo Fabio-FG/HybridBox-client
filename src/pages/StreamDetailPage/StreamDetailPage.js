@@ -27,7 +27,7 @@ function StreamDetailPage() {
 
   useEffect(() => {
     getStream();
-  }, []);
+  }, );
 
   return (
     <div>

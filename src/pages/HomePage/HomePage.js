@@ -5,6 +5,7 @@ import Aos from "aos";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
+
 function HomePage() {
   //use effect for the scroll animations
   useEffect(() => {
@@ -73,7 +74,7 @@ function HomePage() {
           </div>
         </div>
       </div>
-  {/* 
+  
       <div className="bg-wrapper">
         <div className="box">
           <h3 className="dunno-title">Don't know what to choose?</h3>
@@ -139,7 +140,7 @@ function HomePage() {
       </div>
       <div className="box">
       
-      </div> */}
+      </div> 
     </div>
   );
 }
