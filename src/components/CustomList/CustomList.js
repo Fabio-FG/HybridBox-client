@@ -57,8 +57,8 @@ function CustomList({ isAdded }) {
         {cartChannels.length !== 0 &&
           cartChannels.map((channel) => {
             return (
-              <div className="list-container">
-                <div className="cart-container-box" key={channel._id}>
+              <div className="list-container" key={channel._id}>
+                <div className="cart-container-box" >
                   <Link to={`/channels/${channel._id}`}>
                     <img
                       src={channel.channelImage}
@@ -78,8 +78,8 @@ function CustomList({ isAdded }) {
         {cartStreams.length !== 0 &&
           cartStreams.map((stream) => {
             return (
-              <div className="list-container">
-                <div className="cart-container-box" key={stream._id}>
+              <div className="list-container" key={stream._id}>
+                <div className="cart-container-box" >
                   <Link to={`/streams/${stream._id}`}>
                     <img
                       src={stream.streamImage}
