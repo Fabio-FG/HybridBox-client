@@ -21,36 +21,36 @@ class StreamsService {
 
   // POST /channels create
   createStream = async (requestBody) => {
-    return this.api.post("/streams/create", requestBody);
+    return this.api.post("/api/streams/create", requestBody);
   };
 
   //Post /add streams
   addStream = async (id) => {
-    return this.api.post(`api/users/streams/${id}`, {isAdding: true});
+    return this.api.post(`/api/users/streams/${id}`, { isAdding: true });
   };
 
-  // GET /channels get all streams 
+  // GET /channels get all streams
   getAllStreams = async () => {
-    return this.api.get("/streams");
+    return this.api.get("/api/streams");
   };
 
   // GET /channels/:projectId
   getStream = async (streamId) => {
-    return this.api.get(`/streams/${streamId}`);
+    return this.api.get(`/api/streams/${streamId}`);
   };
 
   // PUT /streams/:channelId
   updateChannel = async (streamId, requestBody) => {
-    return this.api.put(`/streams/${streamId}`, requestBody);
+    return this.api.put(`/api/streams/${streamId}`, requestBody);
   };
 
   // DELETE /channels/delete/:projectId
   deleteChannel = async (id) => {
-    return this.api.post(`api/users/streams/${id}`, {isAdding: false});
+    return this.api.post(`/api/users/streams/${id}`, { isAdding: false });
   };
 }
 
 // Create one instance of the service
 const streamsService = new StreamsService();
 
-export default streamsService
+export default streamsService;
