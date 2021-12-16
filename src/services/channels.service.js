@@ -20,33 +20,33 @@ class ChannelsService {
   }
 
   // POST /channels
-  createChannel = async (requestBody) => {
-    return this.api.post("/channels", requestBody);
+  createChannel = (requestBody) => {
+    return this.api.post("/api/channels", requestBody);
   };
 
   //Post /add channels
-  addChannel = async (id) => {
-    return this.api.post(`api/users/channels/${id}`, {isAdding: true});
+  addChannel = (id) => {
+    return this.api.post(`api/users/channels/${id}`, { isAdding: true });
   };
 
-  // GET /channels
-  getAllChannels = async () => {
-    return this.api.get("/channels");
+  // GET /api/channels
+  getAllChannels = () => {
+    return this.api.get("/api/channels");
   };
 
-  // GET /channels/:projectId
-  getChannel = async (channelId) => {
-    return this.api.get(`/channels/${channelId}`);
+  // GET /api/channels/:projectId
+  getChannel = (channelId) => {
+    return this.api.get(`/api/channels/${channelId}`);
   };
 
-  // PUT /channels/:channelId
-  updateChannel = async (channelId, requestBody) => {
-    return this.api.put(`/channels/${channelId}`, requestBody);
+  // PUT /api/channels/:channelId
+  updateChannel = (channelId, requestBody) => {
+    return this.api.put(`/api/channels/${channelId}`, requestBody);
   };
 
-  // DELETE /channels/delete/:projectId
-  deleteChannel = async (id) => {
-    return this.api.post(`api/users/channels/${id}`, {isAdding: false});
+  // DELETE /api/channels/delete/:projectId
+  deleteChannel = (id) => {
+    return this.api.post(`api/users/channels/${id}`, { isAdding: false });
   };
 }
 

@@ -20,32 +20,32 @@ class StreamsService {
   }
 
   // POST /channels create
-  createStream = async (requestBody) => {
+  createStream = (requestBody) => {
     return this.api.post("/api/streams/create", requestBody);
   };
 
   //Post /add streams
-  addStream = async (id) => {
+  addStream = (id) => {
     return this.api.post(`/api/users/streams/${id}`, { isAdding: true });
   };
 
   // GET /channels get all streams
-  getAllStreams = async () => {
+  getAllStreams = () => {
     return this.api.get("/api/streams");
   };
 
   // GET /channels/:projectId
-  getStream = async (streamId) => {
+  getStream = (streamId) => {
     return this.api.get(`/api/streams/${streamId}`);
   };
 
   // PUT /streams/:channelId
-  updateChannel = async (streamId, requestBody) => {
+  updateChannel = (streamId, requestBody) => {
     return this.api.put(`/api/streams/${streamId}`, requestBody);
   };
 
   // DELETE /channels/delete/:projectId
-  deleteChannel = async (id) => {
+  deleteChannel = (id) => {
     return this.api.post(`/api/users/streams/${id}`, { isAdding: false });
   };
 }

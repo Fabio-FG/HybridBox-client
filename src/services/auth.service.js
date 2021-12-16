@@ -19,22 +19,22 @@ class AuthService {
     });
   }
 
-  login = async (requestBody) => {
+  login = (requestBody) => {
     // return axios.post("http://localhost:5005/auth/login");
     return this.api.post("/auth/login", requestBody); // http://localhost:5005 /auth/login
   };
 
-  signup = async (requestBody) => {
+  signup = (requestBody) => {
     // return axios.post("http://localhost:5005/auth/singup");
     return this.api.post("/auth/signup", requestBody);
   };
 
-  verify = async () => {
+  verify = () => {
     // return axios.post("http://localhost:5005/auth/verify");
     return this.api.get("/auth/verify");
   };
 
-  getUser = async () => {
+  getUser = () => {
     // return axios.post("http://localhost:5005/auth/verify");
     return this.api.get("/api/users/current");
   };

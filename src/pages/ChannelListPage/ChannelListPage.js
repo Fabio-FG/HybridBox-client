@@ -34,7 +34,7 @@ function ChannelListPage({ channelsProp }) {
       return oneStream.streamName.toLowerCase().includes(char.toLowerCase());
     });
     setSearchStreams(filteredStream);
-  }
+  };
 
   //function to get all channels
   const getAllChannels = async () => {
@@ -69,8 +69,7 @@ function ChannelListPage({ channelsProp }) {
   const deleteChannel = async (id) => {
     try {
       //use service to get the value and promise from the backend
-       await channelsService.deleteChannel(id);
-   
+      await channelsService.deleteChannel(id);
 
       setIsAdded(!isAdded);
     } catch (error) {
@@ -93,7 +92,7 @@ function ChannelListPage({ channelsProp }) {
 
   const addStream = async (id) => {
     try {
-     await streamsService.addStream(id);
+      await streamsService.addStream(id);
       setIsAdded(!isAdded);
     } catch (error) {
       console.log(error);
@@ -104,8 +103,7 @@ function ChannelListPage({ channelsProp }) {
   const deleteStream = async (id) => {
     try {
       //use service to get the value and promise from the backend
-       await streamsService.deleteChannel(id);
-      
+      await streamsService.deleteChannel(id);
 
       setIsAdded(!isAdded);
     } catch (error) {
@@ -121,7 +119,10 @@ function ChannelListPage({ channelsProp }) {
 
   return (
     <div>
-      <Searchbar filterChannelList={filterChannelList}  filterStreamList={filterStreamList} />
+      <Searchbar
+        filterChannelList={filterChannelList}
+        filterStreamList={filterStreamList}
+      />
       <h1 className="channel-list-title">Channel and Stream Services</h1>
 
       <div className="main-wrapper">
@@ -133,14 +134,16 @@ function ChannelListPage({ channelsProp }) {
                 <div className="channelCard" key={oneChannel._id}>
                   <div className="info-container">
                     <Link
-                      to={"/channels/" + oneChannel._id}
+                      to={"/channels" + oneChannel._id}
                       className="link-service"
                     >
-                     { oneChannel.channelImage && <img
-                        src={oneChannel.channelImage}
-                        alt={oneChannel.channelName}
-                        className="channel-img"
-                      />}
+                      {oneChannel.channelImage && (
+                        <img
+                          src={oneChannel.channelImage}
+                          alt={oneChannel.channelName}
+                          className="channel-img"
+                        />
+                      )}
                       <h4>{oneChannel.channelName}</h4>
                     </Link>
                   </div>
@@ -172,7 +175,7 @@ function ChannelListPage({ channelsProp }) {
                 <div className="streamCard" key={oneStream._id}>
                   <div className="info-container">
                     <Link
-                      to={"/streams/" + oneStream._id}
+                      to={"/streams" + oneStream._id}
                       className="link-service"
                     >
                       <img
