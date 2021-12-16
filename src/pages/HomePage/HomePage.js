@@ -53,8 +53,10 @@ function HomePage() {
           </p>
         </div>
       </div>
-      <div className="box">
+
+
       <div className="bg-wrapper">
+      <div className="box">
 
         <h3>Don't know what to choose? Check these deals</h3>
         <p>
