@@ -8,7 +8,7 @@ function ChannelDetailPage() {
   const [channel, setChannel] = useState(null);
   const { channelId } = useParams();
 
-  console.log("the channel", channel);
+  
 
   //function to get the details of one channel id
   const getChannel = async () => {
@@ -18,7 +18,7 @@ function ChannelDetailPage() {
       );
 
       const oneChannel = response.data;
-      console.log("One channel", oneChannel);
+     
 
       setChannel(oneChannel);
     } catch (error) {

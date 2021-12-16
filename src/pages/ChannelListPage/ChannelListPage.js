@@ -105,8 +105,7 @@ function ChannelListPage({ channelsProp }) {
     try {
       //use service to get the value and promise from the backend
        await streamsService.deleteChannel(id);
-      /* setIsDeleted(!isDeleted);
-      console.log(isDeleted); */
+      
 
       setIsAdded(!isAdded);
     } catch (error) {

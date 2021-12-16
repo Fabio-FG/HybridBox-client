@@ -24,7 +24,7 @@ function AuthProviderWrapper({ children }) {
 
         // If the token is valid, update the state variables
         const user = response.data; // coming from payload
-        console.log(response.data);
+        
         setIsLoggedIn(true);
         setIsLoading(false);
         setUser(user);

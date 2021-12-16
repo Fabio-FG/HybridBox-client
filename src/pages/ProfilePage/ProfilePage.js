@@ -7,7 +7,7 @@ function ProfilePage() {
   // Get the value from the context
   const {  user} = useContext(AuthContext);
 
-  console.log("list", user);
+ 
   //set the user state
 
   //function to import the user model using axios

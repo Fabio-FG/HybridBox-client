@@ -33,8 +33,8 @@ function CustomList({ isAdded }) {
     setCartChannels(response.data.listOfChannels);
     setCartStreams(response.data.listOfStreams);
 
-    console.log(response.data);
-    /* addChannel(cartChannels) */
+  
+    
   };
 
   useEffect(() => {
