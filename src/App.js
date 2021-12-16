@@ -32,9 +32,9 @@ function App() {
         <Route path="/signup" element={<IsAnon> <SignupPage /> </IsAnon>} />
         <Route path="/login" element={<IsAnon> <LoginPage /> </IsAnon>} />
         
-        <Route path="/channels" element={<ChannelListPage />} />
-        <Route path="/channels/:channelId" element={<ChannelDetailPage /> } />
-        <Route path="/streams/:streamId" element={<StreamDetailPage />} />
+        <Route path="/channels" element={<IsPrivate><ChannelListPage /></IsPrivate>} />
+        <Route path="/channels/:channelId" element={<IsPrivate><ChannelDetailPage /></IsPrivate> } />
+        <Route path="/streams/:streamId" element={<IsPrivate><StreamDetailPage /></IsPrivate>} />
         
         <Route path="*" element={<ErrorPage />} />
       </Routes>

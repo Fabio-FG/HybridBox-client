@@ -14,7 +14,7 @@ function ChannelDetailPage() {
   const getChannel = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5005/channels/" + channelId
+        `${process.env.REACT_APP_SERVER_URL}/channels/` + channelId
       );
 
       const oneChannel = response.data;
