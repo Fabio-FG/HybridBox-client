@@ -1,5 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
+import "animate.css/animate.min.css";
 
 import Navbar from "./components/Navbar/Navbar";
 //import pages

@@ -1,3 +1,11 @@
+:root {
+  --main-color: crimson;
+  --main-bg-color: white;
+  --light-font-color: white;
+  --font-color: grey;
+  --dark-bg: rgb(28, 29, 32);
+}
+
 .intro-container {
   position: relative;
   display: flex;
@@ -18,7 +26,6 @@
   background-color: rgba(220, 20, 60, 0.781);
   border-radius: 10px;
   padding: 10px;
-
   text-align: center;
   margin: auto;
   margin-top: 15%;
@@ -27,50 +34,235 @@
 }
 
 .box {
-  background-color: gray;
   display: flex;
   flex-direction: column;
-  margin: 3%;
+  margin-bottom: 2%;
+  margin-top: 2%;
+  width: 100%;
+  
 }
 
-.bg-wrapper{
+.box-1 {
+  background-color: rgb(39, 39, 39);
+  color: var(--light-font-color);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8%;
+  margin-top: 5%;
+}
+
+.bg-wrapper {
   background-color: rgb(20, 20, 20);
   width: 100%;
 }
 
+.how-wrapper {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1%;
+  margin-bottom: 2%;
+}
+
+.how-wrapper h3 {
+  font-size: 2.5em;
+}
+
+.how-wrapper p {
+  font-size: 1.3em;
+  margin-top: 1%;
+  text-align: justify;
+}
+
+.why-title {
+  font-size: 2.5em;
+  margin-bottom: 5%;
+}
+.why-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url(../../bg-images/2.jpg);
+  filter: opacity(85%);
+}
+
+.quality-box {
+  background-color: rgba(247, 242, 242, 0.74);
+  margin-left: 2%;
+  width: 55%;
+  margin-right: auto;
+  margin-top: 2%;
+}
+
+.price-box {
+  background-color: rgba(247, 242, 242, 0.74);
+  width: 50%;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-right: 2%;
+}
+
+.freedom-box {
+  background-color: rgba(247, 242, 242, 0.74);
+  width: 55%;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-left: 2%;
+  margin-bottom: 2%;
+}
+
+.quality-text {
+  font-size: 1.3em;
+  width: 60%;
+  color: black;
+  text-align: left;
+  padding-left: 5%;
+}
+
+.price-text {
+  font-size: 1.7em;
+  text-align: right;
+  padding-right: 2%;
+  width: 60%;
+  margin-left: auto;
+}
+
+.freedom-text {
+  color: black;
+  width: 60%;
+  margin-right: 5%;
+  text-align: left;
+  padding-left: 5%;
+  font-size: 1.3em;
+}
+
+.quality-title {
+  font-size: 1.7em;
+  text-align: left;
+  padding-left: 5%;
+  margin-bottom: 0;
+}
+
+.price-title {
+  font-size: 1.7em;
+  text-align: right;
+  padding-right: 5%;
+  margin-bottom: 0;
+}
+.freedom-title {
+  font-size: 1.7em;
+  text-align: left;
+  padding-left: 5%;
+  margin-bottom: 0;
+}
+
+
+.dunno-title{
+  color: var(--light-font-color);
+  font-size: 2.5em;
+  margin-top: 2%;
+}
+
+.deals-text{
+  color: var(--light-font-color);
+  filter: opacity(85%);
+  width: 55%;
+  font-size: 1.3em;
+  margin: auto;
+  margin-bottom: 2%;
+}
 .deals-container {
-  background-color: cyan;
+  
   display: flex;
   flex-direction: row;
-  margin: 2%;
+  margin: 2% 2% 5% 2%;
   justify-content: center;
+  
 }
 
 .deal-box {
-  background-color: lightgreen;
+  background-color: var(--main-bg-color);
+  border-radius: 8px;
   width: 20%;
   margin: 20px;
+  margin-bottom: 5%;
+  box-shadow: 0px 2px 25px 5px var(--main-color);
+
+  
+}
+
+
+#flip-1-box{
+  transition-duration: 1.5s;
+}
+
+#flip-1-box:hover{
+  transition-duration: 1.5s;
+  transform: scale(1.1);
+}
+
+
+#flip-2-box{
+  transition-duration: 1.5s;
+}
+
+#flip-2-box:hover{
+  transition-duration: 1.5s;
+  transform: scale(1.1);
+}
+
+#flip-3-box{
+  transition-duration: 1.5s;
+}
+
+#flip-3-box:hover{
+  transition-duration: 1.5s;
+  transform: scale(1.1);
+}
+
+
+
+.deal-box:hover {
+  transform: scale(1.1);
+  border-radius: 8px;
+  transition-duration: 0.4s;  
+}
+
+.deal-box p {
+  color: var(--font-color);
+}
+
+.deal-list{
+  line-height: 16px;
 }
 
 .deal-wrapper {
   display: flex;
   flex-direction: column;
 }
-.why-box {
-  display: flex;
-  background-color: pink;
-  flex-direction: column;
-  margin: 10px;
-}
 
 .btn-wrapper {
   justify-content: space-between;
   flex-direction: column;
-  
   display: flex;
 }
 
 .learn-btn {
- margin-top: 30px;
- 
+  margin-top: 30px;
+  text-decoration: none;
+  background-color: var(--main-color);
+  padding: 12px;
+  color: var(--light-font-color);
+  margin-bottom: 3%;
+  transition-duration: 0.4s;
+}
+
+.learn-btn:hover{
+  color: var(--main-color);
+  background-color: var(--main-bg-color);
+  transition-duration: 0.4s;
+  border: 2px solid var(--font-color);
 }

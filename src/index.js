@@ -7,7 +7,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { AuthProviderWrapper } from "./context/auth.context";
 /* import './fonts/AntipastoPro-Medium_trial.ttf' */
 import './fonts/Cedora-RegularStd.otf'
-
+import "animate.css/animate.min.css";
 
 
 

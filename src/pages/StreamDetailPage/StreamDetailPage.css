@@ -1,0 +1,80 @@
+.details-title{
+    font-size: 2em;
+    text-align: start;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 5%;
+    color: crimson;
+  }
+  .channel-info-text{
+      
+      width: 60%;
+      padding: 15px;
+      
+      text-align: start;
+      margin: auto;
+      margin-top: 1%;
+      margin-bottom: 2%;
+      font-size: 1.1em;
+  }
+  
+  .details-logo-img{
+    margin-top: 4%;
+    height: 120px;
+  }
+  
+  
+  
+  .btn-container {
+    width: 50%;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+  
+  .add-detail-btn {
+    background-color: crimson;
+    color: white;
+    height: 65px;
+    width: 130px;
+    transition-duration: 0.5s;
+    font-size: 1.2em;
+    margin-right: 35px;
+  }
+  
+  .add-detail-btn:hover {
+    transform: scale(1.1);
+    background-color: white;
+    color: crimson;
+    border: 1px solid crimson;
+    transition-duration: 0.5s;
+  }
+  
+  .goback-btn {
+    background-color: crimson;
+    width: 130px;
+    align-items: center;
+    height: 65px;
+    font-size: 1.2em;
+    transition-duration: 0.5s;
+  }
+  
+  .goback-btn:hover {
+    transform: scale(1.1);
+    background-color: white;
+    color: crimson;
+    border: 1px solid crimson;
+    transition-duration: 0.5s;
+  }
+  
+  
+  .description-text{
+      
+      width: 60%;
+      font-size: 1.2em;
+      text-align: justify;
+      margin: auto;
+  }

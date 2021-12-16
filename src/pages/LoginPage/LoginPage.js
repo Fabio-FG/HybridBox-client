@@ -55,8 +55,14 @@ function LoginPage(props) {
  
 
   return (
-    <div className="LoginPage">
-      <h1>Login</h1>
+    <div className="login-page">
+    <div className="login-bg">
+    <div className='login-wrapper'>
+
+    
+
+
+      <h1 className='title'>Login</h1>
       
      
 
@@ -71,11 +77,13 @@ function LoginPage(props) {
       </form>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-      <p>Don't have an account yet?</p>
-      <Link to={"/signup"}> Sign Up</Link>
+      <p className='no-acc'>Don't have an account yet?</p>
+      <Link to={"/signup"} className='signup-link'> Sign Up</Link>
 
-      
+      </div>
     </div>
+    </div>
+    
   );
 }
 

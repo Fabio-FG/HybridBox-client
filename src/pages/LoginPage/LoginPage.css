@@ -1,9 +1,77 @@
+:root {
+  --main-color: crimson;
+  --main-bg-color: white;
+  --light-font-color: white;
+  --font-color: grey;
+  --dark-bg: rgb(28, 29, 32);
+}
+
+.login-page{
+  text-align: center;
+  color: var(--light-font-color);
+  margin-bottom: -5%;
+}
+
+.title{
+  color: var(--light-font-color);
+  font-size: 3em;
+}
+
+.login-bg{
+  background-image: url(../../bg-images/3.jpg);
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 0%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  
+
+}
+
+.login-wrapper{
+  
+  position: absolute;
+  flex-direction: column;
+  display: flex;
+  margin-top: 5%;
+  box-shadow: 0px 2px 3px grey;
+  width: 27%;
+  border-radius: 6px;
+  backdrop-filter: blur(6.5px);
+-webkit-backdrop-filter: blur(6.5px);
+  
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  text-align: center;
+  
+}
+
+ label{
+  padding: 10px;
+  font-size: 1.2em;
+  
+}
+
+input{
+  margin: 5%;
+  padding: 15px;
+}
+
+
 .login-btn{
-    padding: 5px 10px;
-  min-width: 50px;
-  margin: 5px;
+  padding: 5px 10px;
+  width: 180px;
   font-size: 1.2em;
   height: 40px;
+  margin: auto;
+  margin-top: 20px;
   background-color: rgb(173, 7, 40);
   color: white;
   transition-duration: 0.4s;
@@ -15,4 +83,20 @@
     color: crimson;
     transition-duration: 0.4s;
     transform: scale(1.1);
+}
+
+
+.error-message{
+  color: var(--light-font-color);
+}
+
+.no-acc{
+  color: var(--light-font-color);
+  text-decoration: none;
+}
+
+.signup-link{
+  color: var(--light-font-color);
+  text-decoration: none;
+  margin-bottom: 4%;
 }

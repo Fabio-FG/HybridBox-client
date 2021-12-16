@@ -10,6 +10,7 @@
 .dropdown {
   position: relative;
   display: inline-block;
+  transition-duration: 0.3s;
 }
 
 .dropdown-content {
@@ -40,5 +41,6 @@
 
 .dropdown:hover .dropbtn {
   color: white;
-  background-color: rgb(230, 59, 93);
+  transform: scale(1.1);
+  transition-duration: 0.3s;
 }

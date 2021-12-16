@@ -5,7 +5,7 @@ import authService from "../../services/auth.service";
 import { Link } from "react-router-dom";
 
 function CustomList({ isAdded }) {
-  const [cartChannels, setCartChannels] = useState([""]);
+  const [cartChannels, setCartChannels] = useState([]);
   const [cartStreams, setCartStreams] = useState([]);
   /* const { user } = useContext(AuthContext); */
 
@@ -49,50 +49,52 @@ function CustomList({ isAdded }) {
     <div className="customList">
       <h3>My HybridBox</h3>
       {/* conditional if the channels or streams are empty display the image */}
-      {(cartChannels.length === 0 || cartStreams.lenght === 0) && (
+      {cartChannels.length === 0 && cartStreams.lenght === 0 && (
         <div>Cart is empty</div>
       )}
 
       <div className="item">
-        {cartChannels.map((channel) => {
-          return (
-            <div className="list-container">
-              <div className="cart-container-box" key={channel._id}>
-                <Link to={`/channels/${channel._id}`}>
-                  <img
-                    src={channel.channelImage}
-                    alt={channel.channelName}
-                    className="listed-channel-img"
-                  />
-                </Link>
-                <br></br>
-                {channel.channelName}
+        {cartChannels.length !== 0 &&
+          cartChannels.map((channel) => {
+            return (
+              <div className="list-container">
+                <div className="cart-container-box" key={channel._id}>
+                  <Link to={`/channels/${channel._id}`}>
+                    <img
+                      src={channel.channelImage}
+                      alt={channel.channelName}
+                      className="listed-channel-img"
+                    />
+                  </Link>
+                  <br></br>
+                  {channel.channelName}
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
 
         {/* STREAMS INTO THE BASKET */}
 
-        {cartStreams.map((stream) => {
-          return (
-            <div className="list-container">
-              <div className="cart-container-box" key={stream._id}>
-                <Link to={`/streams/${stream._id}`}>
-                  <img
-                    src={stream.streamImage}
-                    alt={stream.streamName}
-                    className="listed-channel-img"
-                  />
-                </Link>
-                <br></br>
-                {stream.streamName}
+        {cartStreams.length !== 0 &&
+          cartStreams.map((stream) => {
+            return (
+              <div className="list-container">
+                <div className="cart-container-box" key={stream._id}>
+                  <Link to={`/streams/${stream._id}`}>
+                    <img
+                      src={stream.streamImage}
+                      alt={stream.streamName}
+                      className="listed-channel-img"
+                    />
+                  </Link>
+                  <br></br>
+                  {stream.streamName}
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
       </div>
-      {(cartChannels.length !== 0 || cartStreams.length !== 0 ) && (
+      {(cartChannels.length !== 0 || cartStreams.length !== 0) && (
         <>
           <div className="price-container">
             <hr></hr>

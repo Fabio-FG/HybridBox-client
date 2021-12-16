@@ -43,7 +43,12 @@ function SignupPage(props) {
   };
 
   return (
-    <div className="SignupPage">
+    <div className="signup-page">
+    <div className="signup-bg">
+    <div className="signup-wrapper">
+
+
+
       <h1>Sign Up</h1>
 
       <form onSubmit={handleSignupSubmit}>
@@ -70,7 +75,9 @@ function SignupPage(props) {
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
       <p>Already have account?</p>
-      <Link to={"/login"}> Login</Link>
+      <Link to={"/login"} className="login-link"> Login</Link>
+    </div>
+    </div>
     </div>
   );
 }
