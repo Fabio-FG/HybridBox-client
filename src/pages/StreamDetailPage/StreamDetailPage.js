@@ -13,10 +13,8 @@ function StreamDetailPage() {
 
   const getStream = async () => {
     try {
-      
-     const response = await streamsService.getStream(streamId)
+      const response = await streamsService.getStream(streamId);
 
-    
       const oneStream = response.data;
 
       setStream(oneStream);
@@ -29,7 +27,7 @@ function StreamDetailPage() {
 
   useEffect(() => {
     getStream();
-  } );
+  });
 
   return (
     <div>
@@ -49,7 +47,7 @@ function StreamDetailPage() {
               <p>
                 <b>Channel Name:</b> {stream.streamName}
               </p>
-             
+
               <p>
                 <b>Official Page:</b> <Link to="">{stream.streamWebsite}</Link>
               </p>

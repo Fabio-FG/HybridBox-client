@@ -1,7 +1,7 @@
 import "./ChannelDetailsPage.css";
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import axios from "axios";
+
 import channelsService from "../../services/channels.service";
 
 function ChannelDetailPage() {

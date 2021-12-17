@@ -32,8 +32,6 @@ function CustomList({ isAdded }) {
     const response = await authService.getUser();
     setCartChannels(response.data.listOfChannels);
     setCartStreams(response.data.listOfStreams);
-
-  
     
   };
 

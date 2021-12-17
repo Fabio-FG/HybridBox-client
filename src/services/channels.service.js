@@ -51,6 +51,6 @@ class ChannelsService {
 }
 
 // Create one instance of the service
-const channelsService = new ChannelsService();
+const  channelsService = new ChannelsService();
 
 export default channelsService;
