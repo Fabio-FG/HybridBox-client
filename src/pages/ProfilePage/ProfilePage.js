@@ -1,12 +1,19 @@
 import "./ProfilePage.css";
 import CustomList from "../../components/CustomList/CustomList";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../context/auth.context";
+import "aos/dist/aos.css";
+import Aos from "aos";
 
 function ProfilePage() {
   // Get the value from the context
   const {  user} = useContext(AuthContext);
-
+  
+  
+  //use effect for the scroll animations
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
  
   //set the user state
 
@@ -16,7 +23,7 @@ function ProfilePage() {
 
   return (
     <div className="profile-wrapper">
-      <div className="profile-container">
+      <div data-aos="fade-right" className="profile-container">
         <div className="profile-page-title">
           <h1>My HybridBox Zone</h1>
         </div>
@@ -25,7 +32,7 @@ function ProfilePage() {
         <br></br>
         {/* <Link to="/edit-profile"><button className='edit-btn'>Edit Profile</button></Link> */}
       </div>
-      <aside>
+      <aside data-aos="fade-left">
         <CustomList />
 
         {/*  <div className='prices-container'>

@@ -49,9 +49,7 @@ function StreamDetailPage() {
               <p>
                 <b>Channel Name:</b> {stream.streamName}
               </p>
-              <p>
-                <b>Channel Genre:</b> {stream.genre}
-              </p>
+             
               <p>
                 <b>Official Page:</b> <Link to="">{stream.streamWebsite}</Link>
               </p>

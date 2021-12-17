@@ -2,6 +2,7 @@ import "./ChannelDetailsPage.css";
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
+import channelsService from "../../services/channels.service";
 
 function ChannelDetailPage() {
   //channel states hook
@@ -13,9 +14,10 @@ function ChannelDetailPage() {
   //function to get the details of one channel id
   const getChannel = async () => {
     try {
-      const response = await axios.get(
+     /*  const response = await axios.get(
         `${process.env.REACT_APP_SERVER_URL}/channels/` + channelId
-      );
+      ); */
+      const response = await channelsService.getChannel(channelId)
 
       const oneChannel = response.data;
      

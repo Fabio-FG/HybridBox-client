@@ -134,7 +134,7 @@ function ChannelListPage({ channelsProp }) {
                 <div className="channelCard" key={oneChannel._id}>
                   <div className="info-container">
                     <Link
-                      to={"/channels" + oneChannel._id}
+                      to={"/channels/" + oneChannel._id}
                       className="link-service"
                     >
                       {oneChannel.channelImage && (
@@ -175,7 +175,7 @@ function ChannelListPage({ channelsProp }) {
                 <div className="streamCard" key={oneStream._id}>
                   <div className="info-container">
                     <Link
-                      to={"/streams" + oneStream._id}
+                      to={"/streams/" + oneStream._id}
                       className="link-service"
                     >
                       <img

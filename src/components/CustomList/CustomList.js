@@ -20,10 +20,10 @@ function CustomList({ isAdded }) {
   //Discount conditional
   if (itemPrice === 0) {
     discountPrice = 0;
-  } else if (itemPrice < 17) {
-    discountPrice = 1.2;
+  } else if (itemPrice > 20) {
+    discountPrice = itemPrice * 0.50;
   } else {
-    discountPrice = 1.6;
+    discountPrice = itemPrice * 0.20;
   }
   //Total price with the discount
   const totalPrice = itemPrice - discountPrice;

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import authService from "../../services/auth.service";
 import "./SignupPage.css";
+import imageBg from '../../bg-images/6.jpg'
 
 function SignupPage(props) {
   const [email, setEmail] = useState("");
@@ -35,6 +36,7 @@ function SignupPage(props) {
   return (
     <div className="signup-page">
       <div className="signup-bg">
+      <img src={imageBg} alt="bg" className="signup-bg"/>
         <div className="signup-wrapper">
           <h1>Sign Up</h1>
 

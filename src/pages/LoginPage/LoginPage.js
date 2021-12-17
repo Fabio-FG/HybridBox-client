@@ -5,6 +5,8 @@ import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/auth.context";
 import authService from "../../services/auth.service";
+import imageBg from "../../bg-images/6.jpg";
+
 
 function LoginPage(props) {
   const [email, setEmail] = useState("");
@@ -38,9 +40,13 @@ function LoginPage(props) {
     }
   };
 
+
+
+
   return (
     <div className="login-page">
       <div className="login-bg">
+        <img src={imageBg} alt="bg" className="login-bg" />
         <div className="login-wrapper">
           <h1 className="title">Login</h1>
 
