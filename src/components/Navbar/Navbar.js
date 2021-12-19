@@ -17,6 +17,7 @@ function Navbar() {
         </Link>
       </div>
 
+
       <div className="nav-container">
         <Link to="/channels" className="link-style">Channels</Link>
 
