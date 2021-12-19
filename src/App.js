@@ -17,6 +17,7 @@ import ChannelDetailPage from "./pages/ChannelDetailsPage/ChannelDetailsPage";
 import StreamDetailPage from "./pages/StreamDetailPage/StreamDetailPage";
 import Footer from "./components/Footer/Footer";
 import EditProfilePage from "./pages/EditProfilePage/EditProfilePage";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 
 
@@ -38,8 +39,8 @@ function App() {
         
         <Route path="*" element={<ErrorPage />} />
       </Routes>
-
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }

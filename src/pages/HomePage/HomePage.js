@@ -138,9 +138,7 @@ function HomePage() {
           </div>
         </div>
       </div>
-      <div className="box">
-      
-      </div> 
+     
     </div>
   );
 }
