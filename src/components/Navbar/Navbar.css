@@ -28,7 +28,8 @@
   padding: 0;
   align-items: flex-end;
   text-decoration: none;
-  transition-duration: 0.4s
+  transition-duration: 0.4s;
+  
 }
 
 .link-style:hover{
@@ -38,13 +39,14 @@
 
 .logo {
   color: whitesmoke;
- 
+  
   margin-left: 15%;
   font-size: 1.5em;
   text-decoration: none;
-  top: 0;
+  margin-top: -12%;
+
   display: block;
-  margin-top: -15px;
+ 
 }
 
 .logout-btn {
