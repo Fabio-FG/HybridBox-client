@@ -40,7 +40,7 @@ function App() {
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />
-      <ScrollToTop />
+     {/*  <ScrollToTop /> */}
     </div>
   );
 }
