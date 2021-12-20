@@ -47,83 +47,19 @@
  
 
 
+@media screen and (max-width:600px) {
+  *{
+    font-size: 0.8rem;
 
-/*  label {
-  width: 200px;
-  display: block;
-}
+  }
 
-input,
-textarea {
-  width: 200px;
-  padding: 10px;
-  display: inline-block;
-  margin: 10px;
-} 
- */
-/* nav {
-  background: #454b58;
-  color: white;
-  padding: 0px 20px;
-  box-shadow: 0px 1px 2px gray;
- 
-  margin-bottom: 15px;
   
 }
 
-nav h1{
-  
-  margin: 0;
-}
-
-nav li {
-  list-style: none;
-  color: white;
-  font-size: 24px;
-  font-weight: 600;
-  
-} */
-
-/* .card {
-  width: 400px;
-  padding: 10px;
-  box-shadow: 0px 2px 3px grey;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  background: #94a7c8;
-  border-radius: 4px;
-  
-}
- 
 
 
 
 
 
 
-
-
-/* .SignupPage,
-.LoginPage {
-  background-color: crimson;
-  color: white;
-} */
-
-
-
-/* .EditProjectPage form,
-.AddTask form,
-.AddProject form,
-.SignupPage form,
-.LoginPage form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  
-} */
-
-
-.TaskCard {
-  background-color: #dfeef9;
-}
 

@@ -21,9 +21,9 @@ function CustomList({ isAdded }) {
   if (itemPrice === 0) {
     discountPrice = 0;
   } else if (itemPrice > 20) {
-    discountPrice = itemPrice * 0.50;
+    discountPrice = itemPrice * 0.05;
   } else {
-    discountPrice = itemPrice * 0.20;
+    discountPrice = itemPrice * 0.02;
   }
   //Total price with the discount
   const totalPrice = itemPrice - discountPrice;
@@ -97,10 +97,10 @@ function CustomList({ isAdded }) {
           <div className="price-container">
             <hr></hr>
             <div className="price-text">
-              <div>Items Price: {itemPrice.toFixed(2)}€</div>
               <div>Channel Price: {channelPrice.toFixed(2)}€</div>
               <div>Stream Price: {streamPrice.toFixed(2)}€</div>
-              <div>Discount:{discountPrice.toFixed(2)}€</div>
+              <div>Items Price: {itemPrice.toFixed(2)}€</div>
+              <div>Discount: {discountPrice.toFixed(2)}€</div>
               <div className="total-price">
                 <b>Total: </b> {totalPrice.toFixed(2)}€
               </div>
