@@ -1,11 +1,15 @@
 .Navbar {
   display: flex;
-  background-color: crimson;
-  border: 1px solid black;
-  max-width: 100%;
+  background-color: rgb(220, 20, 60);
+  /* background-color: transparent; */
+  width: 100%;
   top: 0;
   flex-direction: row;
   height: 70px;
+  z-index: 2;
+  position: sticky;
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(6.5px);
 }
 
 .nav-container {
@@ -88,4 +92,25 @@ select {
   
 }
 
+@media screen and (max-width: 600px) { 
+  .Navbar a:not(:first-child) {display: none;}
+  .Navbar a.icon{
+    float: right;
+    display: block;
+  }
+}
 
+@media screen and (max-width: 600px) {
+  .Navbar.responsive { position: relative;}
+  .Navbar.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .Navbar.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}

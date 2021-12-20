@@ -53,6 +53,7 @@ function Navbar() {
           )}
 
         </div>
+     {/*    <i class="fa fa-bars"></i> */}
       </div>
     </nav>
   );
