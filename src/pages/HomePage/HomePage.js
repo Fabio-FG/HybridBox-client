@@ -23,7 +23,7 @@ function HomePage() {
         {/* <h1>Home Page</h1> */}
 
         <h3 className="intro-text">
-          Customise your TV channels deals with HybridBox. Now you can truly see
+          Customise your TV channel deals with HybridBox. Now you can truly see
           what you pay for.
         </h3>
       </div>

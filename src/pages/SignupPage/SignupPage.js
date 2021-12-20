@@ -29,7 +29,7 @@ function SignupPage(props) {
       navigate("/login");
     } catch (error) {
       // If the request resolves with an error, set the error message in the state
-      setErrorMessage("Something went wrong");
+      setErrorMessage("Password must contain 5 characters and contain at least one number.");
     }
   };
 
