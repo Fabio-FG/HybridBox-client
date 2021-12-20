@@ -29,7 +29,7 @@ function HomePage() {
       </div>
 
  
-      <div className="box-1" data-aos="fade-up">
+      <div className="box-1" > {/* data-aos="fade-up" */}
         <div className="how-wrapper">
           <h3>How does HybridBox work?</h3>
 

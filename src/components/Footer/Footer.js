@@ -8,16 +8,16 @@ function Footer() {
     <div className="footer">
       <div className="text-container">
         <section className="socials">
-          <Link to="https://github.com/Fabio-FG">
+          <a href="https://github.com/Fabio-FG" target="_blank" rel="noreferrer">
             <img src={githubLogo} alt="github-logo1" className="socials-logo" />
-          </Link>
-          <Link to="https://www.linkedin.com/in/fabiofguerreiro/">
+          </a>
+          <a href="https://www.linkedin.com/in/fabiofguerreiro/" target="_blank" rel="noreferrer">
             <img
               src={linkedinLogo}
               alt="linkedin-logo"
               className="socials-logo"
             />
-          </Link>
+          </a>
         </section>
         
         <p>Developed by Fábio Guerreiro &copy;</p>
