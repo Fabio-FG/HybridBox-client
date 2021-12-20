@@ -36,7 +36,7 @@ function LoginPage(props) {
       navigate("/");
     } catch (error) {
       // If the request resolves with an error, set the error message in the state
-      setErrorMessage("Password must have at least 5 characters and contain at least one number.");
+      setErrorMessage("Password must contain 5 characters and at least one number.");
     }
   };
 
