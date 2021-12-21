@@ -17,35 +17,83 @@ import ChannelDetailPage from "./pages/ChannelDetailsPage/ChannelDetailsPage";
 import StreamDetailPage from "./pages/StreamDetailPage/StreamDetailPage";
 import Footer from "./components/Footer/Footer";
 import EditProfilePage from "./pages/EditProfilePage/EditProfilePage";
+import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
-
-
-
 function App() {
-  
-
   return (
     <div className="App">
-
-         <Navbar />
+      <ScrollToTop />
+      <Navbar />
 
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/profile" element={<IsPrivate> <ProfilePage /> </IsPrivate>} />
-        <Route path="/edit-profile" element={<IsPrivate> <EditProfilePage /> </IsPrivate>} />
-        <Route path="/signup" element={<IsAnon> <SignupPage /> </IsAnon>} />
-        <Route path="/login" element={<IsAnon> <LoginPage /> </IsAnon>} />
-        
-        <Route path="/channels" element={<IsPrivate><ChannelListPage /></IsPrivate>} />
-        <Route path="/channels/:channelId" element={<IsPrivate><ChannelDetailPage /></IsPrivate> } />
-        <Route path="/streams/:streamId" element={<IsPrivate><StreamDetailPage /></IsPrivate>} />
-        
+        <Route
+          path="/profile"
+          element={
+            <IsPrivate>
+              {" "}
+              <ProfilePage />{" "}
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/edit-profile"
+          element={
+            <IsPrivate>
+              {" "}
+              <EditProfilePage />{" "}
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/signup"
+          element={
+            <IsAnon>
+              {" "}
+              <SignupPage />{" "}
+            </IsAnon>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <IsAnon>
+              {" "}
+              <LoginPage />{" "}
+            </IsAnon>
+          }
+        />
+
+        <Route
+          path="/channels"
+          element={
+            <IsPrivate>
+              <ChannelListPage />
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/channels/:channelId"
+          element={
+            <IsPrivate>
+              <ChannelDetailPage />
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/streams/:streamId"
+          element={
+            <IsPrivate>
+              <StreamDetailPage />
+            </IsPrivate>
+          }
+        />
+
         <Route path="*" element={<ErrorPage />} />
       </Routes>
-      <ScrollToTop /> 
+      <ScrollToTopButton />
       <Footer />
-       
     </div>
   );
 }

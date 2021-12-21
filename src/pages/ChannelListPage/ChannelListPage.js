@@ -7,7 +7,7 @@ import Searchbar from "../../components/Searchbar/Searchbar";
 import CustomList from "../../components/CustomList/CustomList";
 import addIcon from "../../icons/add-icon.svg";
 import deleteIcon from "../../icons/delete-icon.svg";
-import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
+import ScrollToTopButton from "../../components/ScrollToTopButton/ScrollToTopButton";
 
 function ChannelListPage({ channelsProp }) {
   // contains all the channels and streams in the DB
@@ -120,7 +120,7 @@ function ChannelListPage({ channelsProp }) {
 
   return (
     <div>
-    <ScrollToTop /> 
+    <ScrollToTopButton /> 
       <Searchbar
         filterChannelList={filterChannelList}
         filterStreamList={filterStreamList}
