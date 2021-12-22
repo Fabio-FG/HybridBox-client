@@ -69,7 +69,7 @@ function Navbar() {
               </Link>
             )}
           </div>
-          <i className="fa fa-bars" style={{color:"white"}}></i>
+          {/* <i className="fa fa-bars" style={{color:"white"}}></i> */}
         </nav>
       </header>
     </div>
