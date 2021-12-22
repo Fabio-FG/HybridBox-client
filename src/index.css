@@ -2,6 +2,7 @@
 :root {
   --main-color: crimson;
   --main-bg-color: white;
+  
 }
 
 
@@ -47,14 +48,7 @@
  
 
 
-@media screen and (max-width:600px) {
-  *{
-    font-size: 0.8rem;
 
-  }
-
-  
-}
 
 
 

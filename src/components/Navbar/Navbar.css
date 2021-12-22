@@ -1,4 +1,4 @@
-.Navbar {
+.header {
   display: flex;
   background-color: rgb(220, 20, 60);
   /* background-color: transparent; */
@@ -12,6 +12,9 @@
   -webkit-backdrop-filter: blur(6.5px);
 }
 
+.nav-toggle {
+  display: none;
+}
 .nav-container {
   display: flex;
   margin-left: auto;
@@ -33,24 +36,20 @@
   align-items: flex-end;
   text-decoration: none;
   transition-duration: 0.4s;
-  
 }
 
-.link-style:hover{
+.link-style:hover {
   transform: scale(1.1);
   transition-duration: 0.4s;
 }
 
 .logo {
   color: whitesmoke;
-  
-  margin-left: 15%;
-  font-size: 1.5em;
+  margin-left: 3%;
+  font-size: 1.2rem;
   text-decoration: none;
-  margin-top: -12%;
-
+margin-top: -1%;
   display: block;
- 
 }
 
 .logout-btn {
@@ -62,20 +61,19 @@
   transition-duration: 0.4s;
 }
 
-.logout-btn:hover{
+.logout-btn:hover {
   transform: scale(1.1);
   transition-duration: 0.4s;
 }
 
-.profile-img{
+.profile-img {
   transition-duration: 0.4s;
 }
 
-.profile-img:hover{
+.profile-img:hover {
   transform: scale(1.1);
   transition-duration: 0.4s;
 }
-
 
 button,
 select {
@@ -88,29 +86,149 @@ select {
   color: white;
   transition-duration: 0.4s;
   border: none;
-
-  
 }
 
-@media screen and (max-width: 600px) { 
-  .Navbar a:not(:first-child) {display: none;}
-  .Navbar a.icon{
-    float: right;
-    display: block;
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label span {
+  display: none;
+}
+
+/* @media screen and (max-width: 600px) {
+  .header {
+   
+    background-color: rgb(220, 20, 60);
+    height: 70px;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    backdrop-filter: blur(8.5px);
+    -webkit-backdrop-filter: blur(6.5px);
   }
-}
+
+  .logo {
+    color: whitesmoke;
+     margin-left: 5%;
+    text-decoration: none;
+    display: block;
+    background-color: crimson;
+    font-size: 0.7rem;
+    text-align: center;
+    margin-top: 0px;
+    text-decoration: none;
+  }
+
+  .nav-container {
+    display: flex;
+    margin-left: auto;
+    background-color: crimson;
+    width: 100%;
+    z-index: 2;
+    margin-top: 70px;
+    padding: 3px;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 300ms ease-in-out 250ms;
+  }
+
+  .nav-container a {
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+  }
+  .test-wrap {
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
+  }
+
+  .nav-toggle:checked ~ nav {
+    display: block;
+    transform: scale(1, 1);
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-toggle-label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    background-color: rgba(76, 76, 145, 0.199);
+  }
+
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    display: block;
+    background: white;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+  }
+
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+    content: "";
+    position: absolute;
+  }
+
+  .nav-toggle-label span::before {
+    bottom: 7px;
+  }
+
+  .nav-toggle-label span::after {
+    top: 7px;
+  }
+
+  .nav-toggle:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 10ms ease-in-out;
+  }
+
+  .nav-toggle:checked ~ nav .test-wrap {
+    opacity: 1;
+    transition: opacity 10ms ease-in-out;
+  }
+} */
+
+
 
 @media screen and (max-width: 600px) {
-  .Navbar.responsive { position: relative;}
-  .Navbar.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
+  .header{
+    display: flex;
+    flex-direction: column;
+    margin-bottom:0;
   }
 
-  .Navbar.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
+  .nav-container{
+    width: 100%;
+    margin-top: -1.5%;
+    background-color:rgb(220, 20, 60);
+    border-radius: 0%;
+    font-size: 0.9em;
+    display: none;
   }
+
+  .logo{
+    font-size: 0.7rem;
+  }
+
+
+  .nav-toggle {
+    display: none;
+  }
+  
+  .nav-toggle-label span {
+    display: block;
+  }
+
+
+  
+ 
 }
