@@ -26,7 +26,7 @@ function Navbar() {
         </Link>
         <input type="checkbox" className="nav-toggle" id="nav-toggle" />
         <label for="nav-toggle" className="nav-toggle-label">
-          <span>X</span>
+          <span></span>
         </label>
         {/* Logo  redirecting to the home page*/}
 
