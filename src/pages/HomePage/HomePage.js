@@ -57,8 +57,8 @@ function HomePage() {
             </p>
           </div>
           <div data-aos="fade-right" className="price-box">
-            <h5 className="price-title">Price</h5>
-            <p className="price-text">
+            <h5 className="quality-title">Price</h5>
+            <p className="quality-text">
               We believe that everyone should have the same opportunities and so
               HybridBox tries to accomodate to all types of socio-economic
               classes.
@@ -66,7 +66,7 @@ function HomePage() {
           </div>
           <div data-aos="fade-left" className="freedom-box">
             <h5 className="freedom-title">Freedom</h5>
-            <p className="freedom-text">
+            <p className="quality-text">
               Because HybridBox believes that freedom is part of Human nature.
               In this day and age with so many restricted freedom aspects in our
               lives, HybridBox brings real freedom to the users.
