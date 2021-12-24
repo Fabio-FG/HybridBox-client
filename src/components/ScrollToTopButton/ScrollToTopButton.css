@@ -22,3 +22,32 @@
     transform: scale(1.1);
     transition-duration: 0.4s;
 }
+
+
+@media screen and (max-width: 400px) {
+  .to-Top {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    font-size: 1.5em;
+    color: rgb(155, 150, 151);
+    cursor: pointer;
+    border-radius: 20%;
+    background-color: transparent;
+  }
+  
+  
+  
+  .arrow-up {
+    filter: invert(21%) sepia(70%) saturate(4944%) hue-rotate(338deg)
+      brightness(86%) contrast(102%) opacity(70%);
+    height: 40px;
+    transition-duration: 0.4s;
+  }
+  
+  .arrow-up:hover{
+      transform: scale(1.1);
+      transition-duration: 0.4s;
+  }
+  
+}

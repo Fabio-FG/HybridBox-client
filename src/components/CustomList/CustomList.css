@@ -71,3 +71,72 @@
     height: 50px;
     width: 60px;
 }
+
+
+@media screen and (max-width: 650px) {
+    .item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    margin: auto;
+    flex-wrap: wrap;
+    margin-top: 10%;
+    margin-bottom: 8%;
+}
+
+
+.cart-container-box{
+    
+    margin: 5px;
+    color: var(--font-color);
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 1.4em;
+    transition-duration: 0.4s;
+    width: 75px;
+    height: 95px;
+    font-size: 1em;
+    
+}
+
+.cart-container-box:hover{
+    transform: scale(1.1);
+    transition-duration: 0.4s;
+}
+
+.price-container{
+    width: 90%;
+    margin: auto;
+    margin-top: 3%;
+    text-align: justify;
+}
+
+.price-container hr {
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+.customList h3{
+    color: crimson;
+    font-size: 1.9em;
+    margin-top: 15%;
+}
+
+.price-text{
+ 
+    margin-right: 3%;
+    font-size: 1.25em;
+    text-align: right;
+}
+
+.total-price{
+    margin-top: 40px;
+    font-size: 1.27em;
+    text-align: right;
+}
+.listed-channel-img{
+    height: 50px;
+    width: 60px;
+}
+}
