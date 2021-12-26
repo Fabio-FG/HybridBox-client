@@ -121,10 +121,13 @@ function ChannelListPage({ channelsProp }) {
   return (
     <div>
     <ScrollToTopButton /> 
+    <div className="search-container">
+
       <Searchbar
         filterChannelList={filterChannelList}
         filterStreamList={filterStreamList}
       />
+    </div>
       <h1 className="channel-list-title">Channel and Stream Services</h1>
 
       <div className="main-wrapper">

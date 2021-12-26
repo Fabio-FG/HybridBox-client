@@ -89,3 +89,191 @@ aside {
     background-color: white;
     color: crimson;
 }
+
+@media screen and (max-width: 650px) {
+    .profile-wrapper{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        
+    }
+    
+    
+    .profile-img{
+        border-radius: 50%;
+        height: 200px;
+        width: 55%;
+        margin-top: 10%;
+        margin-bottom: 5%;
+    }
+    
+    .profile-page-title{
+        color: var(--font-color);
+        margin-top: 5%;
+    
+    }
+    
+    aside {
+        background-color: white;
+        width: 90%;
+        margin: auto;
+        margin-bottom: 10%;
+        box-shadow: 0px 2px 10px rgba(231, 222, 222, 0.788);
+        border-radius: 10px;
+        
+    }
+    
+    .profile-container{
+       background-color: white;
+       width: 85%;
+       color: var(--font-color);
+       box-shadow: 0px 2px 10px rgba(231, 222, 222, 0.788);
+       border-radius: 10px;
+       margin: auto;
+       margin-top: 25%;
+       padding: 10px;
+       margin-bottom: 8%;
+    }
+    
+    .prices-container{
+        line-height:10px;
+        text-align: left;
+        margin-left: 5%;
+    }
+    
+    .checkout{
+        display: flex;
+        justify-content: flex-end;
+    }
+    .checkout-btn{
+        transition-duration: 0.4s;
+        margin: auto;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        font-size: 1.5em;
+        width: 40%;
+        height: 30%;
+        padding: 15px;
+        
+        
+    }
+    
+    .checkout-btn:hover{
+        border: 1px solid crimson;
+        transition-duration: 0.4s;
+        transform: scale(1.1);
+        background-color: white;
+        color: crimson;
+    }
+    
+    
+    .edit-btn{
+        
+        transition-duration: 0.4s;
+        
+    }
+    
+    .edit-btn:hover{
+        border: 1px solid crimson;
+        transition-duration: 0.4s;
+        transform: scale(1.1);
+        background-color: white;
+        color: crimson;
+    }
+    
+  }
+
+
+
+  @media screen and (max-width: 450px) {
+    .profile-wrapper{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        
+    }
+    
+    
+    .profile-img{
+        border-radius: 50%;
+        height: 200px;
+        width: 55%;
+        margin-top: 10%;
+        margin-bottom: 5%;
+    }
+    
+    .profile-page-title{
+        color: var(--font-color);
+        margin-top: 5%;
+    
+    }
+    
+    aside {
+        background-color: white;
+        width: 90%;
+        margin: auto;
+        margin-bottom: 10%;
+        box-shadow: 0px 2px 10px rgba(231, 222, 222, 0.788);
+        border-radius: 10px;
+        
+    }
+    
+    .profile-container{
+       background-color: white;
+       width: 85%;
+       color: var(--font-color);
+       box-shadow: 0px 2px 10px rgba(231, 222, 222, 0.788);
+       border-radius: 10px;
+       margin: auto;
+       margin-top: 25%;
+       padding: 10px;
+       margin-bottom: 8%;
+    }
+    
+    .prices-container{
+        line-height:10px;
+        text-align: left;
+        margin-left: 5%;
+    }
+    
+    .checkout{
+        display: flex;
+        justify-content: flex-end;
+    }
+    .checkout-btn{
+        transition-duration: 0.4s;
+        margin: auto;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        font-size: 1.5em;
+        width: 40%;
+        height: 30%;
+        padding: 15px;
+        
+        
+    }
+    
+    .checkout-btn:hover{
+        border: 1px solid crimson;
+        transition-duration: 0.4s;
+        transform: scale(1.1);
+        background-color: white;
+        color: crimson;
+    }
+    
+    
+    .edit-btn{
+        
+        transition-duration: 0.4s;
+        
+    }
+    
+    .edit-btn:hover{
+        border: 1px solid crimson;
+        transition-duration: 0.4s;
+        transform: scale(1.1);
+        background-color: white;
+        color: crimson;
+    }
+    
+  }
