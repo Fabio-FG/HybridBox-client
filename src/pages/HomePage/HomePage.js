@@ -95,7 +95,7 @@ function HomePage() {
                 </div>
               </div>
               <div className="btn-wrapper">
-                <Link to="/channels" className="learn-btn" >Learn More</Link>
+                <Link to="/channels" className="learn-btn" >Choose plan</Link>
               </div>
             </div>
           </div>

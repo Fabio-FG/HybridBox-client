@@ -10,9 +10,6 @@ import './fonts/Cedora-RegularStd.otf'
 import "animate.css/animate.min.css";
 
 
-
-
-
 ReactDOM.render(
   <React.StrictMode>
     <Router>
